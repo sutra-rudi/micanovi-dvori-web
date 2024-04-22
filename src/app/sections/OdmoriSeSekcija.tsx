@@ -16,9 +16,9 @@ const OdmoriSeSekcija = () => {
 
   const parseByLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);
 
-  const sectionContentHr = `Zrmanja Camping Village, pruža idealan bijeg od gradske vreve u blizini Obrovca. Smješten na osami, na svježem zraku i okružen prirodom, kamp nudi miran i opuštajući ambijent. Svojim mobilnim kućicama i brojnim sadržajima kao što su bazen, dječje igralište i sportski tereni, Zrmanja Camping je idealno odredište za sve koji traže bijeg u prirodu i opuštanje daleko od užurbane svakodnevice.`;
+  const sectionContentHr = `Gospodarstvo Mićanovi Dvori za sezonu 2024. otvoreni su isključivo za goste koji su u aranžmanu koje pruža Riva Rafting Centar svojim gostima i partnerskim agencijama, što znači da gastro ponuda ne pružamo gostima izvan navedenog aranžmana.\nU ruralnom ambijentu Mićanovi Dvori nude izvorne specijalitete iz zaboravljenog vremena. Ne propustite priliku da ih okusite; pripremljene su na isti način kao nekada od strane naših dragih baka.`;
 
-  const sectionContentEn = `Zrmanja Camping Village offers an ideal escape from the hustle and bustle of the city near Obrovac. Located in seclusion, amidst fresh air and surrounded by nature, the campsite provides a peaceful and relaxing ambiance. With its mobile homes and numerous amenities such as a pool, playground, and sports courts, Zrmanja Camping is the perfect destination for those seeking a retreat in nature and relaxation away from the busy everyday life.`;
+  const sectionContentEn = `Mićanovi Dvori Estate for the 2024 season are open exclusively to guests booked through Riva Rafting Center and their partner agencies. This means that our gastronomic offerings are not available to guests outside of the mentioned arrangements.\nIn the rural ambiance, Mićanovi Dvori offers original delicacies from a forgotten era. Don't miss the opportunity to taste them; they are prepared the same way as they were by our beloved grandmothers.`;
 
   return (
     <section className={styles.mainSection}>
