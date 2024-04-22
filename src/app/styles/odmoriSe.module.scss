@@ -54,14 +54,26 @@
       grid-template-columns: repeat(1, 1fr);
     }
     gap: 1.125rem;
-    max-width: 650px;
-
+    @media only screen and (min-width: $desktops) {
+      max-width: 650px;
+    }
+    width: 100%;
     place-items: start;
     position: relative;
     //     max-height: 534px;
     grid-template-rows: masonry;
 
     img {
+      &:nth-child(1) {
+        @media only screen and (max-width: $tablets) {
+          width: 100%;
+          height: 40vh;
+          aspect-ratio: 16 / 9;
+          object-fit: cover;
+          display: block;
+        }
+      }
+
       &:nth-child(3) {
         @media only screen and (min-width: $phones) {
           position: absolute;
@@ -71,6 +83,16 @@
           bottom: 15%;
         }
         bottom: 100px;
+
+        @media only screen and (max-width: $tablets) {
+          display: none;
+        }
+      }
+
+      &:nth-child(2) {
+        @media only screen and (max-width: $tablets) {
+          display: none;
+        }
       }
     }
   }

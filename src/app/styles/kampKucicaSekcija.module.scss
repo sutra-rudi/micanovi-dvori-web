@@ -10,6 +10,7 @@
   align-items: stretch;
   justify-content: flex-start;
   gap: 1.75rem;
+  padding: 0 1rem;
 
   @media only screen and (max-width: $desktops) {
     flex-wrap: wrap;

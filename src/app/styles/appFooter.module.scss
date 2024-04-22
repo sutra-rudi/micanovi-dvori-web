@@ -96,7 +96,8 @@
 
     @media only screen and (max-width: $tablets) {
       margin: 0 auto;
-      max-width: 200px;
+      // max-width: 200px;
+      object-fit: contain;
     }
   }
 

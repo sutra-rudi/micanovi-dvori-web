@@ -11,6 +11,8 @@
     max-width: $masterContainerWidth;
     padding: 0 1rem;
     margin: 0 auto;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
   }
 
   .reviewCard {
@@ -21,6 +23,7 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
     place-items: start;
+    scroll-snap-align: start;
 
     p {
       text-wrap: balance;

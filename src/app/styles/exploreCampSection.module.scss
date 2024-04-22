@@ -53,6 +53,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  padding: 0 1rem;
 
   @media only screen and (max-width: $desktops) {
     grid-template-columns: repeat(3, 1fr);
@@ -60,20 +61,22 @@
 
   @media only screen and (max-width: $tablets) {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 85%;
+    max-width: 95%;
   }
 
   place-items: center;
   gap: 0.5rem;
   .imageContainer {
-    max-width: 362px;
+    @media only screen and (min-width: $tablets) {
+      max-width: 362px;
+    }
     height: 289px;
     width: 100%;
     //     height: 400px;
     position: relative;
 
     @media only screen and (max-width: $tablets) {
-      height: 200px;
+      height: 170px;
     }
   }
 }
