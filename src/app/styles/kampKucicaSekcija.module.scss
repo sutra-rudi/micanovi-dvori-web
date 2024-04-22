@@ -7,6 +7,7 @@
   max-width: $masterContainerWidth;
   margin: 0 auto;
   place-items: center;
+  align-items: stretch;
   justify-content: flex-start;
   gap: 1.75rem;
 
@@ -27,8 +28,24 @@
     place-items: start;
     gap: 1rem;
     grid-template-columns: repeat(1, 1fr);
+
+    ul,
+    h2,
+    a,
+    p {
+      color: $textTamno;
+    }
+
+    ul {
+      padding: 0 0 0 1rem;
+      font-size: $mobileHeading4;
+    }
+
+    p {
+      font-size: $mobileHeading4;
+    }
+
     h2 {
-      color: $skrozTamnaZelena;
       font-size: $mobileHeading2;
       line-height: 120%;
       text-wrap: balance;
@@ -38,7 +55,7 @@
 
     a {
       text-decoration: none;
-      color: $skrozTamnaZelena;
+
       line-height: 153%;
       display: flex;
       place-items: center;

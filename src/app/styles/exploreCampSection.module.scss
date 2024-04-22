@@ -33,9 +33,9 @@
 
   span {
     padding: 0.25rem 0.56rem;
-    outline: 1.3px solid $tamnaZelenaExtra;
+    outline: 1.3px solid $textTamno;
     border-radius: 4px;
-    color: $zelenaTamna;
+    color: $textTamno;
     font-size: $mobileHeading4;
     line-height: 120%;
     cursor: pointer;
@@ -43,7 +43,7 @@
   }
 
   .activeFilter {
-    background: $tamnaZelenaExtra;
+    background: $textTamno;
     color: $svijetloSiva;
   }
 }

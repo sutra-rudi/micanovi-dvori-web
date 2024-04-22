@@ -54,7 +54,7 @@ const KampKucicaCard = (props: KampKucicaCard) => {
       <div className={styles.kampKucicaContent}>
         <h2>{parseByLang(titleHr, titleEng, userLang)}</h2>
 
-        {descHr ? <p>{parseByLang(descHr, descEng, userLang)}</p> : bulletsHr ? parseBullets() : null}
+        {descHr ? <p>{parseByLang(descHr, descEng, userLang)}</p> : bulletsHr ? <ul>{parseBullets()}</ul> : null}
 
         <div className={styles.kampKucicaCtaCont}>
           <a href=''>
