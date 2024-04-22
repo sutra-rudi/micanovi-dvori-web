@@ -2,14 +2,14 @@
   display: flex;
   color: $plavaGlavna;
   background: #fff;
-  border: 0.0625rem solid $zelenaTamna;
+  border: 0.0625rem solid $micanoviZlatna;
   border-radius: 0.375rem;
   cursor: pointer;
   transition: all 250ms cubic-bezier(0.5, 0.2, 0.4, 0.25);
   overflow: hidden;
 
   .active {
-    background: $zelenaTamna;
+    background: $micanoviZlatna;
     color: #fff !important;
   }
 
@@ -31,7 +31,7 @@
     font-weight: 500;
 
     &:hover {
-      color: $zelenaGlavna;
+      color: $micanoviZlatna;
     }
   }
 }

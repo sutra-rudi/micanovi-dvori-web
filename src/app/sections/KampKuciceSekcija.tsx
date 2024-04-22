@@ -9,8 +9,19 @@ const KampKuciceSekcija = () => {
     <section className={styles.mainSection}>
       <div className={styles.kampKuciceCardContainer}>
         {kampKuciceContent.map((item, index) => {
-          const { titleEng, titleHr, learnMoreEn, learnMoreHr, imageUrl, checkAvailabilityEng, checkAvailabilityHr } =
-            item;
+          const {
+            titleEng,
+            titleHr,
+            learnMoreEn,
+            learnMoreHr,
+            imageUrl,
+            checkAvailabilityEng,
+            checkAvailabilityHr,
+            descEn,
+            descHr,
+            bulletsHr,
+            bulletsEn,
+          } = item;
           return (
             <KampKucicaCard
               key={index}
@@ -21,6 +32,10 @@ const KampKuciceSekcija = () => {
               imageUrl={imageUrl}
               checkAvailabilityEng={checkAvailabilityEng}
               checkAvailabilityHr={checkAvailabilityHr}
+              descEng={descEn}
+              descHr={descHr}
+              bulletsHr={bulletsHr}
+              bulletsEn={bulletsEn}
             />
           );
         })}

@@ -13,16 +13,38 @@ interface KampKucicaCard {
   titleEng: string;
   learnMoreHr: string;
   learnMoreEng: string;
+  descHr: string | any;
+  descEng: string | any;
+  bulletsHr: string[] | any;
+  bulletsEn: string[] | any;
   checkAvailabilityHr: string;
   checkAvailabilityEng: string;
 }
 
 const KampKucicaCard = (props: KampKucicaCard) => {
-  const { imageUrl, titleHr, titleEng, learnMoreHr, learnMoreEng, checkAvailabilityEng, checkAvailabilityHr } = props;
+  const {
+    imageUrl,
+    titleHr,
+    titleEng,
+    learnMoreHr,
+    learnMoreEng,
+    checkAvailabilityEng,
+    checkAvailabilityHr,
+    descHr,
+    descEng,
+    bulletsEn,
+    bulletsHr,
+  } = props;
 
   const {
     state: { userLang },
   } = useAppContext();
+
+  const parseBullets = () => {
+    return userLang === 'hr'
+      ? bulletsHr.map((bullet: string) => <li key={bullet}>{bullet}</li>)
+      : bulletsEn.map((bullet: string) => <li key={bullet}>{bullet}</li>);
+  };
 
   return (
     <article className={styles.kampKucicaCard}>
@@ -31,6 +53,8 @@ const KampKucicaCard = (props: KampKucicaCard) => {
       </div>
       <div className={styles.kampKucicaContent}>
         <h2>{parseByLang(titleHr, titleEng, userLang)}</h2>
+
+        {descHr ? <p>{parseByLang(descHr, descEng, userLang)}</p> : bulletsHr ? parseBullets() : null}
 
         <div className={styles.kampKucicaCtaCont}>
           <a href=''>

@@ -15,6 +15,9 @@ import teleIcon from '../img/icons/MOBILE-MENU-SOCIAL-3.svg';
 
 import mobilePapir from '../img/globals/MOBILE-PAPIR.svg';
 import { useAppContext } from '../contexts/store';
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({ weight: '400', subsets: ['latin'] });
 
 const AppHeader = () => {
   const {
@@ -25,12 +28,12 @@ const AppHeader = () => {
 
   const navLinksOne = [
     { text: parseByLang('O nama', 'About us'), href: parseByLang('/o-nama', '/about-us') },
-    { text: parseByLang('Smještaj', 'Accommodation'), href: parseByLang('/smjestaj', '/accommodation') },
+    // { text: parseByLang('Smještaj', 'Accommodation'), href: parseByLang('/smjestaj', '/accommodation') },
     { text: parseByLang('Što posjetiti?', 'What to visit?'), href: parseByLang('/sto-posjetiti', '/what-to-visit') },
     { text: parseByLang('Kontakt', 'Contact'), href: '/kontakt' },
   ];
   const navLinksTwo = [
-    { text: 'Mićanovi Dvori', href: '/' },
+    { text: 'Zrmanja Camping Vilagge', href: '/' },
     { text: 'Riva Rafting Centar', href: '/' },
     // { text: 'Što posjetiti u okolici?', href: '/obrovacki-kraj' },
   ];
@@ -55,7 +58,7 @@ const AppHeader = () => {
     return (
       <div className={styles.navLeft}>
         {navLinksOne.map((link) => (
-          <Link key={link.text} href={link.href}>
+          <Link className={montserrat.className} key={link.text} href={link.href}>
             {link.text}
           </Link>
         ))}
@@ -67,7 +70,7 @@ const AppHeader = () => {
     return (
       <div className={styles.navRight}>
         {navLinksTwo.map((link) => (
-          <Link key={link.text} href={link.href}>
+          <Link className={montserrat.className} key={link.text} href={link.href}>
             {link.text}
           </Link>
         ))}
@@ -98,7 +101,7 @@ const AppHeader = () => {
             <HeaderBaseTwo />
           </div>
           <div className={styles.navInnerParent}>
-            <AppButton isNav content='BOOK YOUR ADVENTURE' />
+            <AppButton isNav content='Kako do nas' />
             <div className={styles.navInnerParentLang}>
               <LanguageSwitch />
             </div>

@@ -45,8 +45,8 @@ const DodatneInformacije = (props: MoreInfoProps) => {
         <div className={styles.imageBox}>
           <div className={styles.titleHolder}>
             <div className={styles.titleHolderInner}>
-              <h6 className={ubuntuCondensed.className}>MIĆANOVI DVORI</h6>
-              <h2 className={styles.headingDefault}>DOMAĆA HRANA</h2>
+              <h6 className={ubuntuCondensed.className}>ZRMANJA CAMPING VILAGGE</h6>
+              <h2 className={styles.headingDefault}>MIĆANOVI DVORI</h2>
             </div>
           </div>
 

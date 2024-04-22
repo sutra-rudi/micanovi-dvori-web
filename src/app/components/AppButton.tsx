@@ -43,6 +43,12 @@ const AppButton = ({
   return (
     <button className={buttonClassNames}>
       <span>{content}</span>
+      {isHero && (
+        <span className={styles.buttonIcon}>
+          <ArrowIcon />
+        </span>
+      )}
+
       {isAbout && (
         <span className={styles.buttonIcon}>
           <ArrowIcon />

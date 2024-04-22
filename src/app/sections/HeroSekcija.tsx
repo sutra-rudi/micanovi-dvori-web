@@ -8,7 +8,7 @@ import PaperDividTop from '../components/PaperDividTop';
 import heroPoster from '../img/hero-poster.jpg';
 import Loading from '../loading';
 import { useAppContext } from '../contexts/store';
-import campingHero from '../img/heros/camping-hero.png';
+import micanoviHero from '../img/heros/micanovi-hero.png';
 
 const RecoletaBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-SemiBold.ttf', weight: '600' }],
@@ -39,8 +39,8 @@ const HeroSekcija = () => {
   const btn_main_hr = 'Rezerviraj svoj boravak';
   const btn_main_en = 'Book your stay';
 
-  // const btn_second_hr = 'Rezerviraj mailom';
-  // const btn_second_en = 'Book by email';
+  const btn_second_hr = 'Google maps';
+  const btn_second_en = 'Google maps';
 
   const langCheck = React.useCallback(
     (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString),
@@ -52,7 +52,7 @@ const HeroSekcija = () => {
     shouldAlwaysCompleteAnimation: true,
     children: (
       <>
-        <Image fill src={campingHero} alt='hero camping from air' />
+        <Image fill src={micanoviHero} alt='restaurant' />
         {/* <ReactPlayer
           ref={playerRef}
           url={'/novi-hero.mp4'}
@@ -87,7 +87,7 @@ const HeroSekcija = () => {
         <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{langCheck(headline_hr, headline_en)}</h1>
         <div className={styles.heroCtaButtonKontejter}>
           <AppButton isHero content={langCheck(btn_main_hr, btn_main_en)} />
-          {/* <AppButton isHero content={langCheck(btn_second_hr, btn_second_en)} isSecondary /> */}
+          <AppButton isHero content={langCheck(btn_second_hr, btn_second_en)} />
         </div>
       </div>
     ),

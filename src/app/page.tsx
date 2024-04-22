@@ -23,13 +23,14 @@ export default async function Home() {
         <HeroSekcija />
         <OdmoriSeSekcija />
         <KampKuciceSekcija />
-        <ExploreCampSection />
-        <ParallaxVideoSection />
-        <ReviewsSection />
         <PogledajVideo />
+        <ExploreCampSection />
+        {/* <ParallaxVideoSection /> */}
         <OnamaSekcija />
+        <ReviewsSection />
+
         <DodatneInformacije isLanding />
-        <FAQsection />
+        {/* <FAQsection /> */}
         <GallerySection />
       </Suspense>
       <AppFooter />

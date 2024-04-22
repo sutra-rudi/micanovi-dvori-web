@@ -42,7 +42,7 @@ const ExploreCampSection = () => {
   return (
     <section className={styles.sectionMain}>
       <div className={styles.sectionTitle}>
-        <h2>{parseByLang('Istražite naš kamp', 'Explore our camp', userLang)}</h2>
+        <h2>{parseByLang('Fotogalerija', 'Photo Gallery', userLang)}</h2>
       </div>
 
       <div className={styles.taxonomyFilterContainer}>

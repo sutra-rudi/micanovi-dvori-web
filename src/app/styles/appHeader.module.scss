@@ -20,14 +20,15 @@
 }
 
 .navPromoTrack {
-  background: $zelenaGlavna;
+  background: $micanoviZlatna;
   display: flex;
   place-items: center;
   justify-content: center;
   gap: 1em;
   font-weight: 400;
-  color: #fff;
+
   font-size: $mobileFontSizeAlt;
+  color: $textTamno;
 
   @media screen and (max-width: $phones) {
     font-size: 0.8em;
@@ -38,8 +39,9 @@
   }
 
   a {
-    color: #fff;
+    color: $textTamno;
     padding: 0.5em 0;
+    text-decoration: none;
   }
 }
 
@@ -48,6 +50,10 @@
   justify-content: space-between;
   place-items: center;
   gap: 2em;
+
+  .headerLinkDivid {
+    color: $micanoviTamna;
+  }
   @media only screen and (max-width: $largeDesktops) {
     gap: 1rem;
   }
@@ -89,7 +95,7 @@
   }
 
   a {
-    color: $tamna;
+    color: $micanoviTamna;
     text-decoration: none;
     cursor: pointer;
     transition: all 250ms ease;
@@ -141,7 +147,7 @@
   font-weight: 400;
 
   a {
-    color: $tamna;
+    color: $micanoviTamna;
     text-decoration: none;
     cursor: pointer;
     transition: all 250ms ease;
