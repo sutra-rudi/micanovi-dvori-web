@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import React from 'react';
-import svgAppLogo from '../img/logos/camping-logo.svg';
+import svgAppLogo from '../img/logos/micanovi-logo.svg';
 import Image from 'next/image';
 
 import styles from '../styles/appHeader.module.scss';
