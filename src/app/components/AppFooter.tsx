@@ -3,7 +3,7 @@
 import React from 'react';
 import styles from '../styles/appFooter.module.scss';
 import footerBg from '../img/globals/footer-main-bg.png';
-import appLogo from '../img/logos/micanovi-logo.svg';
+import footerLogo from '../img/logos/footer-logo-micanovi.svg';
 import Image from 'next/image';
 import facebookIcon from '../img/icons/FACEBOOK-FOOTER.svg';
 import instaIcon from '../img/icons/INSTA-FOOTER.svg';
@@ -80,7 +80,7 @@ const AppFooter = (props: FooterInterface) => {
 
       <div className={styles.footerMaster}>
         <div className={styles.appLogoContainer}>
-          <Image fill src={appLogo} alt='app logo' />
+          <Image fill src={footerLogo} alt='app logo' />
         </div>
         <div className={styles.contentContainer}>
           <div className={styles.footerBlock}>

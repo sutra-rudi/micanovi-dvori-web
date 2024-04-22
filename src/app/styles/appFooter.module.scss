@@ -141,12 +141,14 @@
         font-weight: 500;
         position: relative;
         color: $plavaGlavna;
+        color: $textTamno;
 
         &::after {
           position: absolute;
           content: '';
           width: 48px;
           background: $zelenaGlavna;
+          background: $zelenaTamna;
           height: 2px;
           bottom: -2px;
           left: 0;
@@ -182,6 +184,7 @@
             text-decoration: none;
             color: $plavaGlavna;
             font-size: $baseFontSize;
+            color: $textTamno;
 
             display: flex;
             place-items: center;
@@ -226,6 +229,7 @@
         a {
           text-decoration: none;
           color: $plavaGlavna;
+          color: $textTamno;
           font-size: 1rem;
           line-height: $defaultProred;
           font-family: inherit;
@@ -253,6 +257,7 @@
         a {
           text-decoration: none;
           color: $plavaGlavna;
+          color: $textTamno;
           font-size: 1rem;
           line-height: $defaultProred;
           font-family: inherit;
@@ -280,6 +285,7 @@
     .footerDislaimerTrack {
       background: $zelenaGlavna;
       background: $tamnaZelenaExtra;
+      background: $micanoviZlatna;
       position: absolute;
       bottom: -33px;
       left: 0;
