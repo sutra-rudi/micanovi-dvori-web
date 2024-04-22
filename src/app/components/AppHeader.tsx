@@ -15,9 +15,6 @@ import teleIcon from '../img/icons/MOBILE-MENU-SOCIAL-3.svg';
 
 import mobilePapir from '../img/globals/MOBILE-PAPIR.svg';
 import { useAppContext } from '../contexts/store';
-import { Montserrat } from 'next/font/google';
-
-const montserrat = Montserrat({ weight: '400', subsets: ['latin'] });
 
 const AppHeader = () => {
   const {
@@ -29,8 +26,8 @@ const AppHeader = () => {
   const navLinksOne = [
     { text: parseByLang('O nama', 'About us'), href: parseByLang('/o-nama', '/about-us') },
     // { text: parseByLang('Smještaj', 'Accommodation'), href: parseByLang('/smjestaj', '/accommodation') },
-    { text: parseByLang('Što posjetiti?', 'What to visit?'), href: parseByLang('/sto-posjetiti', '/what-to-visit') },
     { text: parseByLang('Kontakt', 'Contact'), href: '/kontakt' },
+    { text: parseByLang('Što posjetiti?', 'What to visit?'), href: parseByLang('/sto-posjetiti', '/what-to-visit') },
   ];
   const navLinksTwo = [
     { text: 'Zrmanja Camping Vilagge', href: '/' },
@@ -58,7 +55,7 @@ const AppHeader = () => {
     return (
       <div className={styles.navLeft}>
         {navLinksOne.map((link) => (
-          <Link className={montserrat.className} key={link.text} href={link.href}>
+          <Link key={link.text} href={link.href}>
             {link.text}
           </Link>
         ))}
@@ -70,7 +67,7 @@ const AppHeader = () => {
     return (
       <div className={styles.navRight}>
         {navLinksTwo.map((link) => (
-          <Link className={montserrat.className} key={link.text} href={link.href}>
+          <Link key={link.text} href={link.href}>
             {link.text}
           </Link>
         ))}
@@ -89,23 +86,25 @@ const AppHeader = () => {
           <a href='mailto:info@riva-rafting-centar.hr'>info@riva-rafting-centar.hr</a>
         </div>
         <div className={styles.navMaster}>
-          <div className={styles.navInnerParent}>
-            <div className={styles.navLeftParent}>
-              <Link className={styles.noEffectLogo} href={'/'}>
-                <Image src={svgAppLogo} alt='app logo' />
-              </Link>
-              <HeaderBaseOne />
-            </div>
-            <span className={styles.headerLinkDivid}>|</span>
+          <Link className={styles.noEffectLogo} href={'/'}>
+            <Image src={svgAppLogo} alt='app logo' />
+          </Link>
+          <div className={styles.navParentMaster}>
+            <div className={styles.navInnerParent}>
+              <div className={styles.navLeftParent}>
+                <HeaderBaseOne />
+              </div>
+              <span className={styles.headerLinkDivid}>|</span>
 
-            <HeaderBaseTwo />
-          </div>
-          <div className={styles.navInnerParent}>
-            <AppButton isNav content='Kako do nas' />
-            <div className={styles.navInnerParentLang}>
-              <LanguageSwitch />
+              <HeaderBaseTwo />
             </div>
-            <Hamburger toggled={isNavOpen} onToggle={handleNavControl} color='#2f476f' />
+            <div className={styles.navInnerParent}>
+              <AppButton isNav content='Kako do nas' />
+              <div className={styles.navInnerParentLang}>
+                <LanguageSwitch />
+              </div>
+              <Hamburger toggled={isNavOpen} onToggle={handleNavControl} color='#2f476f' />
+            </div>
           </div>
         </div>
 

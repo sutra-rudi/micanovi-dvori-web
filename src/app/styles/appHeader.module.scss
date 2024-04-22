@@ -45,14 +45,21 @@
   }
 }
 
+.navParentMaster {
+  display: flex;
+  place-items: center;
+  gap: 1.1rem;
+  justify-content: space-between;
+}
+
 .navInnerParent {
   display: flex;
   justify-content: space-between;
   place-items: center;
-  gap: 2em;
+  gap: 1.3rem;
 
   .headerLinkDivid {
-    color: $micanoviTamna;
+    color: $textTamno;
   }
   @media only screen and (max-width: $largeDesktops) {
     gap: 1rem;
@@ -71,31 +78,21 @@
   }
 }
 
+.noEffectLogo {
+  &::before {
+    display: none !important;
+  }
+}
+
 .navLeftParent {
   display: flex;
   place-items: center;
-  gap: 2.2rem;
+
   font-weight: 400;
 
-  .noEffectLogo {
-    &::before {
-      display: none !important;
-    }
-  }
-
-  img {
-    max-width: 160px;
-    height: auto;
-
-    @media only screen and (max-width: $largeDesktops) {
-      max-height: 60px;
-
-      object-fit: cover;
-    }
-  }
-
   a {
-    color: $micanoviTamna;
+    color: $textTamno;
+
     text-decoration: none;
     cursor: pointer;
     transition: all 250ms ease;
@@ -109,8 +106,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) scale(0);
-      background: $zelenaGlavna;
-      width: 120%;
+      background: $textTamno;
+      width: 110%;
       height: 30px;
       will-change: transform;
       transition: all 150ms cubic-bezier(0.5, 0.2, 0.4, 0.25);
@@ -133,7 +130,7 @@
 .navLeft {
   display: flex;
   place-items: center;
-  gap: 2em;
+  gap: 1.3rem;
 
   @media screen and (max-width: $desktops) {
     display: none;
@@ -143,11 +140,12 @@
 .navRight {
   display: flex;
   place-items: center;
-  gap: 2em;
+  gap: 1.3rem;
   font-weight: 400;
 
   a {
-    color: $micanoviTamna;
+    color: $textTamno;
+
     text-decoration: none;
     cursor: pointer;
     transition: all 250ms ease;
@@ -165,8 +163,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) scale(0);
-      background: $zelenaGlavna;
-      width: 120%;
+      background: $textTamno;
+      width: 110%;
       height: 30px;
       will-change: transform;
       transition: all 150ms cubic-bezier(0.5, 0.2, 0.4, 0.25);
@@ -227,7 +225,8 @@
 
     a {
       text-decoration: none;
-      color: $plavaGlavna;
+      color: $textTamno;
+
       font-size: $mobileHeading3;
       font-weight: 400;
       line-height: $defaultProred;
