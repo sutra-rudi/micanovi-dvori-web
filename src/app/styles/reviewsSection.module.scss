@@ -9,11 +9,12 @@
     gap: 1.8rem;
     place-items: start center;
     max-width: $masterContainerWidth;
+    padding: 0 1rem;
     margin: 0 auto;
   }
 
   .reviewCard {
-    background: $zelenaGlavna;
+    background: $micanoviZlatna;
     width: 100%;
     padding: 2.1rem;
     display: grid;

@@ -36,7 +36,7 @@ const DodatneInformacije = (props: MoreInfoProps) => {
           <div className={styles.titleHolder}>
             <div className={styles.titleHolderInner}>
               <h6 className={ubuntuCondensed.className}>RIVA RAFTING</h6>
-              <h2 className={styles.headingDefault}>TURISTIČKE AKTIVNOSTI NA ZRMANJI I VELEBITU</h2>
+              <h2 className={styles.headingDefault}>{`TURISTIČKE\nAKTIVNOSTI\nNA ZRMANJI\nI VELEBITU`}</h2>
             </div>
           </div>
 
@@ -45,8 +45,8 @@ const DodatneInformacije = (props: MoreInfoProps) => {
         <div className={styles.imageBox}>
           <div className={styles.titleHolder}>
             <div className={styles.titleHolderInner}>
-              <h6 className={ubuntuCondensed.className}>ZRMANJA CAMPING VILAGGE</h6>
-              <h2 className={styles.headingDefault}>MIĆANOVI DVORI</h2>
+              <h6 className={ubuntuCondensed.className}>MIĆANOVI DVORI</h6>
+              <h2 className={styles.headingDefault}>{`ZRMANJA\nCAMPING\nVILAGGE\n `}</h2>
             </div>
           </div>
 
@@ -57,7 +57,7 @@ const DodatneInformacije = (props: MoreInfoProps) => {
             <div className={styles.titleHolder}>
               <div className={styles.titleHolderInner}>
                 <h6 className={ubuntuCondensed.className}>OBROVAC - ZRMANJA - VELEBIT</h6>
-                <h2 className={styles.headingDefault}>ŠTO POSJETITI U OKOLICI?</h2>
+                <h2 className={styles.headingDefault}>{`ŠTO POSJETITI U\nOKOLICI?\n  `}</h2>
               </div>
             </div>
 

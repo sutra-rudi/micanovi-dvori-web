@@ -2,10 +2,10 @@
   border: 0;
   outline: 0;
   border-radius: 6px;
-  padding: 0.7rem 1rem;
+  padding: 0.6rem 0.9rem;
 
   @media screen and (max-width: $tablets) {
-    padding: 0.5rem 1.1rem;
+    padding: 0.4rem 1rem;
   }
 
   @media screen and (max-width: $phones) {
@@ -36,6 +36,7 @@
   &:hover {
     span {
       color: $zelenaGlavna;
+      color: $textTamno;
     }
   }
 
@@ -96,10 +97,8 @@
 .navButton {
   height: max-content;
   padding: 0.25rem 0.5rem;
-  // background: #fff;
   background: $textTamno;
   outline: 1.5px solid $textTamno;
-  // color: $zelenaGlavna;
   min-width: 144px;
   text-transform: uppercase;
   color: #fff;
@@ -109,18 +108,10 @@
   }
 
   &::before {
-    background: $svijetloSiva;
-    background: rgba(164, 205, 70, 0.75);
+    background: $micanoviTamna;
   }
   &::after {
-    background: $svijetloSiva;
-    background: rgba(127, 167, 35, 0.5);
-  }
-
-  &:hover {
-    span {
-      color: #fff;
-    }
+    background: $micanoviZlatna;
   }
 }
 
@@ -138,7 +129,6 @@
 }
 
 .aboutButton {
-  // width: 251px;
   display: flex;
   place-items: center;
   justify-content: flex-start;
@@ -147,7 +137,7 @@
 
   &:hover {
     .buttonIcon {
-      color: $zelenaGlavna;
+      color: $micanoviZlatna;
     }
   }
 }

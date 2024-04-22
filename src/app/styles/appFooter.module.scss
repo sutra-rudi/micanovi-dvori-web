@@ -65,6 +65,7 @@
     // flex-flow: row wrap;
     place-items: center;
     justify-content: center;
+    justify-content: space-between;
     gap: 8rem;
 
     @media only screen and (max-width: $desktops) {
@@ -84,14 +85,14 @@
   }
 
   .appLogoContainer {
-    max-width: 240px;
+    max-width: 322px;
     width: 100%;
-    height: 108px;
+    height: 138px;
     position: relative;
 
-    img {
-      object-fit: contain;
-    }
+    // img {
+    //   object-fit: contain;
+    // }
 
     @media only screen and (max-width: $tablets) {
       margin: 0 auto;
@@ -104,6 +105,7 @@
     place-items: center;
     justify-content: space-between;
     gap: 3rem;
+    width: 100%;
 
     a {
       transition: all 250ms cubic-bezier(0.5, 0.2, 0.4, 0.25);

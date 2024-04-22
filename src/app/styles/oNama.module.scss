@@ -1,7 +1,6 @@
 .aboutUsSection {
   width: 100%;
   position: relative;
-  margin-top: 5rem;
 
   .masterContainer {
     max-width: $masterContainerWidth;
@@ -18,7 +17,8 @@
       flex-direction: row;
       flex-wrap: wrap-reverse;
       place-items: center;
-      gap: 5.5em;
+      gap: 4.1rem;
+      justify-content: center;
     }
 
     .sectionHeading {
@@ -61,17 +61,20 @@
       width: 100%;
 
       @media only screen and (min-width: $desktops) {
-        max-width: 558px;
+        max-width: 411px;
       }
       display: grid;
       grid-template-columns: repeat(1, 1fr);
-      gap: 2em;
+      gap: 2rem;
 
       p {
         width: 100%;
         color: $tamna;
         line-height: $defaultProred;
         font-size: $baseFontSize;
+
+        text-wrap: balance;
+        word-wrap: break-word;
         white-space: pre-wrap;
       }
     }

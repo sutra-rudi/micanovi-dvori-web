@@ -14,6 +14,7 @@ import OnamaSekcija from './sections/OnamaSekcija';
 import PogledajVideo from './sections/PogledajVideo';
 import GallerySection from './sections/GallerySection';
 import ReviewsSection from './sections/ReviewsSection';
+import MapSection from './sections/MapSection';
 
 export default async function Home() {
   return (
@@ -27,6 +28,7 @@ export default async function Home() {
         <ExploreCampSection />
         {/* <ParallaxVideoSection /> */}
         <OnamaSekcija />
+        <MapSection />
         <ReviewsSection />
 
         <DodatneInformacije isLanding />
