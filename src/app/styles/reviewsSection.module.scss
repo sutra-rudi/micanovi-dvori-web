@@ -7,8 +7,14 @@
   .reviewCardContainer {
     display: flex;
     gap: 1.8rem;
-    place-items: start center;
+
+    flex-wrap: nowrap;
     max-width: $masterContainerWidth;
+    justify-content: space-between;
+    @media only screen and (min-width: $tablets) {
+      place-items: start center;
+    }
+    // max-width: 550px;
     padding: 0 1rem;
     margin: 0 auto;
     scroll-snap-type: y mandatory;
@@ -24,7 +30,12 @@
     gap: 1rem;
     place-items: start;
     scroll-snap-align: start;
+    width: 332px;
+    flex-shrink: 0;
 
+    @media only screen and (max-width: $phones) {
+      max-width: 60%;
+    }
     p {
       text-wrap: balance;
       word-wrap: break-word;

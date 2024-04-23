@@ -15,7 +15,10 @@
     .aboutUsContentCont {
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap-reverse;
+
+      @media only screen and (max-width: $phones) {
+        flex-wrap: wrap-reverse;
+      }
       place-items: center;
       gap: 4.1rem;
       justify-content: center;

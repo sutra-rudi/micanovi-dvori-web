@@ -12,17 +12,22 @@
   gap: 1.75rem;
   padding: 0 1rem;
 
-  @media only screen and (max-width: $desktops) {
+  @media only screen and (max-width: $tablets) {
     flex-wrap: wrap;
     justify-content: center;
+    align-content: stretch;
   }
 }
 
 .kampKucicaCard {
-  max-width: 345px;
+  @media only screen and (min-width: $phones) and (max-width: $desktops) {
+    max-width: 48.25%;
+  }
+  // max-width: 45%;
   width: 100%;
   background: #f9f9f9;
   cursor: pointer;
+  flex-shrink: 1;
 
   .kampKucicaContent {
     padding: 1.25rem;
@@ -67,10 +72,16 @@
 
     p {
       font-size: $mobileHeading4;
+      @media only screen and (max-width: $desktops) {
+        font-size: $baseFontSize;
+      }
     }
 
     h2 {
       font-size: $mobileHeading2;
+      @media only screen and (max-width: $desktops) {
+        font-size: $mobileHeading3;
+      }
       line-height: 120%;
       text-wrap: balance;
       word-wrap: break-word;
@@ -90,6 +101,7 @@
 
       img {
         transition: all 250ms cubic-bezier(0.25, 0.4, 0.2, 0.5);
+        flex-shrink: 1;
 
         transform-origin: center;
         transition-delay: 150ms;
