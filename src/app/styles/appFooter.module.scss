@@ -390,6 +390,7 @@
         img {
           cursor: pointer;
           transition: all 250ms ease;
+
           &:hover {
             transform: scale(1.25);
           }

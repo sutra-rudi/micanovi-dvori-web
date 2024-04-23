@@ -65,9 +65,9 @@ const AppFooter = (props: FooterInterface) => {
       <div className={styles.socialFooterStack}>
         <p>{parseByLang('Zapratite nas:', 'Follow us:')}</p>
         <div className={styles.socialIconStack}>
-          <Image src={facebookIcon} alt='icon' width={32} height={32} />
-          <Image src={instaIcon} alt='icon' width={32} height={32} />
-          <Image src={teleIcon} alt='icon' width={32} height={32} />
+          <Image src={facebookIcon} alt='icon' width={42} height={42} />
+          <Image src={instaIcon} alt='icon' width={42} height={42} />
+          <Image src={teleIcon} alt='icon' width={42} height={42} />
         </div>
       </div>
 
@@ -178,16 +178,13 @@ const AppFooter = (props: FooterInterface) => {
               <span>{parseByLang('Zapratite nas:', 'Follow us:')}</span>
               <div className={styles.disclaimerSocialIcons}>
                 <a href='https://www.facebook.com/RivaRaftingCentar/'>
-                  <FacebookIcon />
-                  {/* <Image src={facebookIcon} alt='icon' width={52} height={52} /> */}
+                  <Image src={facebookIcon} alt='icon' width={32} height={32} />
                 </a>
                 <a href='https://www.instagram.com/riva_rafting_centar/ '>
-                  {/* <Image src={instaIcon} alt='icon' width={52} height={52} /> */}
-                  <InstaIcon />
+                  <Image src={instaIcon} alt='icon' width={32} height={32} />
                 </a>
                 <a href='mailto:info@riva-rafting-centar.hr'>
-                  <MsgIcon />
-                  {/* <Image src={teleIcon} alt='icon' width={52} height={52} /> */}
+                  <Image src={teleIcon} alt='icon' width={32} height={32} />
                 </a>
               </div>
             </div>
