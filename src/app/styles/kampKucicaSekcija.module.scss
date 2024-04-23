@@ -28,6 +28,11 @@
   background: #f9f9f9;
   cursor: pointer;
   flex-shrink: 1;
+  transition: all 250ms cubic-bezier(0.25, 0.4, 0.2, 0.5);
+
+  &:hover {
+    background: #f3f3f3;
+  }
 
   .kampKucicaContent {
     padding: 1.25rem;
@@ -46,7 +51,7 @@
 
     ul {
       // padding: 0 0 0 1rem;
-      font-size: $mobileHeading4;
+      font-size: $baseFontSize;
 
       list-style-type: ' -';
       list-style-type: none;
@@ -71,10 +76,7 @@
     }
 
     p {
-      font-size: $mobileHeading4;
-      @media only screen and (max-width: $desktops) {
-        font-size: $baseFontSize;
-      }
+      font-size: $baseFontSize;
     }
 
     h2 {
@@ -96,13 +98,13 @@
       place-items: center;
       justify-content: flex-start;
       transition: all 250ms cubic-bezier(0.25, 0.4, 0.2, 0.5);
-      gap: 0.025rem;
-      overflow: hidden;
+      gap: 0.25rem;
+      // overflow: hidden;
 
-      img {
+      .articleArrow {
         transition: all 250ms cubic-bezier(0.25, 0.4, 0.2, 0.5);
         flex-shrink: 1;
-
+        font-size: inherit;
         transform-origin: center;
         transition-delay: 150ms;
       }
@@ -110,8 +112,9 @@
       &:hover {
         transform: translateX(5%);
         color: $zelenaTamna;
-        img {
+        .articleArrow {
           transform: rotate(45deg) translateX(15%);
+          color: $zelenaTamna;
         }
       }
     }

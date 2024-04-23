@@ -49,39 +49,15 @@ const HeroSekcija = () => {
 
   const background: BannerLayer = {
     translateY: [0, 60],
-    shouldAlwaysCompleteAnimation: true,
-    children: (
-      <>
-        <Image fill src={micanoviHero} alt='restaurant' />
-        {/* <ReactPlayer
-          ref={playerRef}
-          url={'/novi-hero.mp4'}
-          config={{
-            file: {
-              attributes: {
-                poster: heroPoster.src,
-              },
-            },
-          }}
-          loop
-          playing={isReady}
-          onReady={onReady}
-          muted
-          volume={0}
-          width={'100%'}
-          height={'100%'}
-          playsinline
-          fallback={<Loading />}
-        /> */}
-      </>
-    ),
+    shouldAlwaysCompleteAnimation: false,
+    children: <Image fill src={micanoviHero} priority quality={100} alt='restaurant' />,
   };
 
   const foreground: BannerLayer = {
-    translateY: [0, 40],
+    translateY: [0, 30],
     // scale: [2, 0.8],
     // opacity: [1, 0.1],
-    shouldAlwaysCompleteAnimation: true,
+    shouldAlwaysCompleteAnimation: false,
     children: (
       <div className={styles.heroCtaKontejner}>
         <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{langCheck(headline_hr, headline_en)}</h1>

@@ -8,7 +8,7 @@ const MapSection = () => {
   return (
     <section className={styles.sectionMain}>
       <div className={styles.mapContainer}>
-        <Image fill src={mapPlaceholder} alt='mapa' />
+        <Image fill src={mapPlaceholder} alt='mapa' priority />
       </div>
     </section>
   );

@@ -1,15 +1,15 @@
 .aboutUsSection {
   width: 100%;
   position: relative;
+  padding: 0 0 2rem 0;
 
   .masterContainer {
     max-width: $masterContainerWidth;
     margin: 0 auto;
     width: 100%;
-    padding-top: 2rem;
 
     @media only screen and (max-width: $largeDesktops) {
-      padding: 2rem 1rem;
+      padding: 0 1rem;
     }
 
     .aboutUsContentCont {
@@ -17,10 +17,10 @@
       flex-direction: row;
 
       @media only screen and (max-width: $phones) {
-        flex-wrap: wrap-reverse;
+        flex-wrap: wrap;
       }
       place-items: center;
-      gap: 4.1rem;
+      gap: 2.1rem;
       justify-content: center;
     }
 
@@ -45,11 +45,14 @@
         max-width: 523px;
         height: 739px;
       }
-      height: 75vh;
-      max-height: 85vh;
-      max-height: 85dvh;
+
+      @media only screen and (max-width: $tablets) {
+        height: 55vh;
+        max-height: 55vh;
+        max-height: 55dvh;
+      }
       position: relative;
-      // height: 650px;
+      height: 650px;
 
       img {
         max-width: 100%;
@@ -79,6 +82,13 @@
         text-wrap: balance;
         word-wrap: break-word;
         white-space: pre-wrap;
+      }
+
+      .paragraphContainer {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 14px;
+        place-items: start;
       }
     }
 

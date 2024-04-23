@@ -20,8 +20,8 @@ export default async function Home() {
   return (
     <main className={styles.homeMain}>
       <AppHeader />
+      <HeroSekcija />
       <Suspense fallback={<Loading />}>
-        <HeroSekcija />
         <OdmoriSeSekcija />
         <KampKuciceSekcija />
         <PogledajVideo />

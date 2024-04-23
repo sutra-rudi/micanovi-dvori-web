@@ -1,6 +1,6 @@
 .sectionMain {
   position: relative;
-  padding: 8rem 0;
+  padding: 5rem 0;
 }
 
 .sectionTitle {
@@ -28,7 +28,7 @@
   @media only screen and (max-width: $tablets) {
     // max-width: 95%;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    // justify-content: flex-start;
   }
 
   span {

@@ -10,7 +10,9 @@ import instaIcon from '../img/icons/INSTA-FOOTER.svg';
 import teleIcon from '../img/icons/TELE-FOOTER.svg';
 import footerArrow from '../img/icons/FOOTER-LINK-ARROW.svg';
 import footerAltBg from '../img/globals/footer-small-screen.png';
-
+import { SlSocialFacebook as FacebookIcon } from 'react-icons/sl';
+import { SlSocialInstagram as InstaIcon } from 'react-icons/sl';
+import { BsSend as MsgIcon } from 'react-icons/bs';
 import PaperDividTop from './PaperDividTop';
 import { useAppContext } from '../contexts/store';
 import { useWindowSize } from '../hooks/useWindowSize';
@@ -176,13 +178,16 @@ const AppFooter = (props: FooterInterface) => {
               <span>{parseByLang('Zapratite nas:', 'Follow us:')}</span>
               <div className={styles.disclaimerSocialIcons}>
                 <a href='https://www.facebook.com/RivaRaftingCentar/'>
-                  <Image src={facebookIcon} alt='icon' width={32} height={32} />
+                  <FacebookIcon />
+                  {/* <Image src={facebookIcon} alt='icon' width={52} height={52} /> */}
                 </a>
                 <a href='https://www.instagram.com/riva_rafting_centar/ '>
-                  <Image src={instaIcon} alt='icon' width={32} height={32} />
+                  {/* <Image src={instaIcon} alt='icon' width={52} height={52} /> */}
+                  <InstaIcon />
                 </a>
                 <a href='mailto:info@riva-rafting-centar.hr'>
-                  <Image src={teleIcon} alt='icon' width={32} height={32} />
+                  <MsgIcon />
+                  {/* <Image src={teleIcon} alt='icon' width={52} height={52} /> */}
                 </a>
               </div>
             </div>
