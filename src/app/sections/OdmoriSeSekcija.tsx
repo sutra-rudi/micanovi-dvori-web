@@ -24,13 +24,13 @@ const OdmoriSeSekcija = () => {
   const { ref: imageOne } = useParallax<HTMLImageElement>({
     scale: [1, 1.1],
     // translateY: [0, -5],
-    easing: [0.5, 0.2, 0.4, 0.25],
+    // easing: [0.5, 0.2, 0.4, 0.25],
   });
 
   const { ref: imageTwo } = useParallax<HTMLImageElement>({
     // scale: [1, 1.1],
     translateY: [0, -15],
-    easing: [0.5, 0.2, 0.4, 0.25],
+    // easing: [0.5, 0.2, 0.4, 0.25],
   });
 
   return (
