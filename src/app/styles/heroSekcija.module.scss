@@ -5,7 +5,7 @@
   max-height: 80lvh;
   height: 80vh;
   height: 80lvh;
-
+  will-change: contents;
   @media only screen and (max-width: $tablets) {
     height: 95vh;
     height: 95lvh;
@@ -13,7 +13,6 @@
   }
 
   .playerContainer {
-    will-change: contents;
     position: relative;
     height: auto;
     width: 100%;

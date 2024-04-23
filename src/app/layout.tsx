@@ -10,7 +10,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 3,
   userScalable: true,
-  interactiveWidget: 'resizes-visual',
+  interactiveWidget: 'overlays-content',
   colorScheme: 'light',
   themeColor: '#eeeeee',
 };
