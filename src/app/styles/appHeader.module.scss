@@ -82,6 +82,12 @@
   &::before {
     display: none !important;
   }
+
+  @media only screen and (max-width: $phones) {
+    img {
+      object-fit: contain;
+    }
+  }
 }
 
 .navLeftParent {
@@ -191,7 +197,7 @@
   position: fixed;
   width: 70%;
   height: 100%;
-  background: $zelenaGlavna;
+  background: $micanoviZlatna;
   min-height: 100vh;
   min-height: 100lvh;
   z-index: 9;

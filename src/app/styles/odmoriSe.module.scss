@@ -45,6 +45,13 @@
       color: $skrozTamnaZelena;
     }
 
+    .paragraphContainer {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 12px;
+      place-items: start;
+    }
+
     p {
       text-wrap: balance;
       word-wrap: break-word;

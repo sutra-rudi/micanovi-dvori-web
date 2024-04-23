@@ -17,11 +17,13 @@ const OdmoriSeSekcija = () => {
 
   const parseByLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);
 
-  const sectionContentHr = `Gospodarstvo Mićanovi Dvori za sezonu 2024. otvoreni su isključivo za goste koji su u aranžmanu koje pruža Riva Rafting Centar svojim gostima i partnerskim agencijama, što znači da gastro ponuda ne pružamo gostima izvan navedenog aranžmana.\n
-U ruralnom ambijentu Mićanovi Dvori nude izvorne specijalitete iz zaboravljenog vremena. Ne propustite priliku da ih okusite; pripremljene su na isti način kao nekada od strane naših dragih baka.`;
+  const sectionContentHr = `Gospodarstvo Mićanovi Dvori za sezonu 2024. otvoreni su isključivo za goste koji su u aranžmanu koje pruža Riva Rafting Centar svojim gostima i partnerskim agencijama, što znači da gastro ponuda ne pružamo gostima izvan navedenog aranžmana.`;
 
-  const sectionContentEn = `Mićanovi Dvori Estate for the 2024 season are open exclusively to guests booked through Riva Rafting Center and their partner agencies. This means that our gastronomic offerings are not available to guests outside of the mentioned arrangements.\n
-In the rural ambiance, Mićanovi Dvori offers original delicacies from a forgotten era. Don't miss the opportunity to taste them; they are prepared the same way as they were by our beloved grandmothers.`;
+  const sectionContentHrEx = `U ruralnom ambijentu Mićanovi Dvori nude izvorne specijalitete iz zaboravljenog vremena. Ne propustite priliku da ih okusite; pripremljene su na isti način kao nekada od strane naših dragih baka.`;
+
+  const sectionContentEn = `Mićanovi Dvori Estate for the 2024 season are open exclusively to guests booked through Riva Rafting Center and their partner agencies. This means that our gastronomic offerings are not available to guests outside of the mentioned arrangements.`;
+
+  const sectionContentEnEx = `In the rural ambiance, Mićanovi Dvori offers original delicacies from a forgotten era. Don't miss the opportunity to taste them; they are prepared the same way as they were by our beloved grandmothers.`;
 
   const { ref: imageOne } = useParallax<HTMLImageElement>({
     scale: [1, 1.1],
@@ -40,7 +42,10 @@ In the rural ambiance, Mićanovi Dvori offers original delicacies from a forgott
       <div className={styles.innerContent}>
         <div className={styles.ctaContainer}>
           <h2>{parseByLang('Odmori se', 'Take a break')}</h2>
-          <p>{parseByLang(sectionContentHr, sectionContentEn)}</p>
+          <div className={styles.paragraphContainer}>
+            <p>{parseByLang(sectionContentHr, sectionContentEn)}</p>
+            <p>{parseByLang(sectionContentEn, sectionContentEnEx)}</p>
+          </div>
           <div className={styles.sectionButtonsContainer}>
             <AppButton isAbout content={parseByLang('Kontaktirajte nas', 'Contact us')} />
             <AppButton isRelax isAbout content={parseByLang('Google maps', 'Google maps')} />

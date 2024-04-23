@@ -26,8 +26,8 @@ const AppHeader = () => {
   const navLinksOne = [
     { text: parseByLang('O nama', 'About us'), href: parseByLang('/o-nama', '/about-us') },
     // { text: parseByLang('Smještaj', 'Accommodation'), href: parseByLang('/smjestaj', '/accommodation') },
-    { text: parseByLang('Kontakt', 'Contact'), href: '/kontakt' },
-    { text: parseByLang('Što posjetiti?', 'What to visit?'), href: parseByLang('/sto-posjetiti', '/what-to-visit') },
+    { text: parseByLang('Fotogalerije', 'Photo galleries'), href: '/kontakt' },
+    { text: parseByLang('Google maps', 'Google maps'), href: parseByLang('/sto-posjetiti', '/what-to-visit') },
   ];
   const navLinksTwo = [
     { text: 'Zrmanja Camping Vilagge', href: '/' },
@@ -103,7 +103,7 @@ const AppHeader = () => {
               <div className={styles.navInnerParentLang}>
                 <LanguageSwitch />
               </div>
-              <Hamburger toggled={isNavOpen} onToggle={handleNavControl} color='#2f476f' />
+              <Hamburger toggled={isNavOpen} onToggle={handleNavControl} color='#2f2a32' />
             </div>
           </div>
         </div>
