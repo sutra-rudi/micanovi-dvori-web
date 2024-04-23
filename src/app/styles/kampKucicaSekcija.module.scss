@@ -43,13 +43,24 @@
       // padding: 0 0 0 1rem;
       font-size: $mobileHeading4;
 
-      list-style-type: '-';
-      padding-inline-start: 0.5rem;
+      list-style-type: ' -';
+      list-style-type: none;
 
       li {
+        display: flex;
+        place-items: center;
+        justify-content: flex-start;
+        gap: 0.25rem;
         &::marker {
-          margin: 0 0 0 1rem !important;
-          display: inline-block;
+          display: none !important;
+        }
+
+        &::before {
+          width: 6px;
+          height: 1.5px;
+          background: $textTamno;
+          content: '';
+          display: block;
         }
       }
     }

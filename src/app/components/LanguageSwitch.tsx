@@ -43,9 +43,9 @@ const LanguageSwitch = () => {
       className={styles.lang}
     >
       {userLang === UserLanguage.hr ? (
-        <Image fill alt='croatian flag' src={croatianFlag} />
+        <Image width={30} height={30} alt='croatian flag' src={croatianFlag} />
       ) : (
-        <Image fill alt='croatian flag' src={englishFlag} />
+        <Image width={30} height={30} alt='croatian flag' src={englishFlag} />
       )}
     </div>
   );
