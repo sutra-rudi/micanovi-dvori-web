@@ -44,7 +44,7 @@ const OdmoriSeSekcija = () => {
           <h2>{parseByLang('Odmori se', 'Take a break')}</h2>
           <div className={styles.paragraphContainer}>
             <p>{parseByLang(sectionContentHr, sectionContentEn)}</p>
-            <p>{parseByLang(sectionContentEn, sectionContentEnEx)}</p>
+            <p>{parseByLang(sectionContentHrEx, sectionContentEnEx)}</p>
           </div>
           <div className={styles.sectionButtonsContainer}>
             <AppButton isAbout content={parseByLang('Kontaktirajte nas', 'Contact us')} />
