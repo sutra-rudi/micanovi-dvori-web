@@ -23,12 +23,12 @@
   background: $micanoviZlatna;
   display: flex;
   place-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1em;
   font-weight: 400;
-
+  padding: 0 4.5rem;
   font-size: $mobileFontSizeAlt;
-  color: $textTamno;
+  color: #fff;
 
   @media screen and (max-width: $phones) {
     font-size: 0.8em;
@@ -39,9 +39,16 @@
   }
 
   a {
-    color: $textTamno;
-    padding: 0.5em 0;
+    color: #fff;
+    padding: 0.5rem 0;
     text-decoration: none;
+  }
+
+  @media screen and (max-width: $tablets) {
+    padding: 0rem 3rem;
+  }
+  @media screen and (max-width: $phones) {
+    padding: 0rem 1.5rem;
   }
 }
 

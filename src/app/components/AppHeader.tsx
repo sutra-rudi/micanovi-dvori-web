@@ -38,8 +38,11 @@ const AppHeader = () => {
       href: parseByLang(`/sto-posjetiti/?lang=${checkParams}`, `/what-to-visit/?lang=${checkParams}`),
     },
 
-    { text: parseByLang('Fotogalerije', 'Photo galleries'), href: '/kontakt' },
-    { text: parseByLang('Google maps', 'Google maps'), href: parseByLang('/sto-posjetiti', '/what-to-visit') },
+    { text: parseByLang('Fotogalerije', 'Photo galleries'), href: `/kontakt/?lang=${checkParams}` },
+    {
+      text: parseByLang('Google maps', 'Google maps'),
+      href: parseByLang(`/sto-posjetiti/?lang=${checkParams}`, `/what-to-visit/?lang=${checkParams}`),
+    },
   ];
   const navLinksTwo = [
     { text: 'Zrmanja Camping Vilagge', href: '/' },
@@ -111,7 +114,7 @@ const AppHeader = () => {
               <HeaderBaseTwo />
             </div>
             <div className={styles.navInnerParent}>
-              <AppButton isNav content='Kako do nas' />
+              <AppButton isNav content={parseByLang('KAKO DO NAS?', 'HOW TO FIND US?')} />
               <div className={styles.navInnerParentLang}>
                 <LanguageSwitch />
               </div>

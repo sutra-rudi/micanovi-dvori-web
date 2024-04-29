@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { useAppContext } from '../contexts/store';
 
 const ubuntuCondensed = Ubuntu_Condensed({ weight: '400', subsets: ['latin'] });
-
+import { useInView } from 'react-intersection-observer';
 interface MoreInfoProps {
   isLanding: boolean;
 }
@@ -20,6 +20,10 @@ const DodatneInformacije = (props: MoreInfoProps) => {
   const {
     state: { userLang },
   } = useAppContext();
+
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
 
   return (
     <section
@@ -31,8 +35,8 @@ const DodatneInformacije = (props: MoreInfoProps) => {
     >
       <h2 className={styles.sectionHeading}>{userLang === 'hr' ? 'Dodatne Informacije' : 'Additional information'}</h2>
 
-      <div className={styles.sectionListContainer}>
-        <div className={styles.imageBox}>
+      <div ref={ref} className={styles.sectionListContainer}>
+        <div className={inView ? `${styles.imageBox} ${styles.inView}` : `${styles.imageBox}`}>
           <div className={styles.titleHolder}>
             <div className={styles.titleHolderInner}>
               <h6 className={ubuntuCondensed.className}>RIVA RAFTING</h6>
@@ -42,7 +46,7 @@ const DodatneInformacije = (props: MoreInfoProps) => {
 
           <Image src={imgone} fill alt='offer image' />
         </div>
-        <div className={styles.imageBox}>
+        <div className={inView ? `${styles.imageBox} ${styles.inView}` : `${styles.imageBox}`}>
           <div className={styles.titleHolder}>
             <div className={styles.titleHolderInner}>
               <h6 className={ubuntuCondensed.className}>MIĆANOVI DVORI</h6>
@@ -52,7 +56,7 @@ const DodatneInformacije = (props: MoreInfoProps) => {
 
           <Image src={imgtwo} fill alt='offer image' />
         </div>
-        <div className={styles.imageBox}>
+        <div className={inView ? `${styles.imageBox} ${styles.inView}` : `${styles.imageBox}`}>
           <Link href={'/obrovacki-kraj'}>
             <div className={styles.titleHolder}>
               <div className={styles.titleHolderInner}>
