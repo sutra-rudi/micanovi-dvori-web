@@ -15,6 +15,7 @@ import teleIcon from '../img/icons/MOBILE-MENU-SOCIAL-3.svg';
 
 import mobilePapir from '../img/globals/MOBILE-PAPIR.svg';
 import { useAppContext } from '../contexts/store';
+import { useSearchParams } from 'next/navigation';
 
 const AppHeader = () => {
   const {
@@ -22,10 +23,21 @@ const AppHeader = () => {
   } = useAppContext();
 
   const parseByLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
 
   const navLinksOne = [
-    { text: parseByLang('O nama', 'About us'), href: parseByLang('/o-nama', '/about-us') },
-    // { text: parseByLang('Smještaj', 'Accommodation'), href: parseByLang('/smjestaj', '/accommodation') },
+    {
+      text: parseByLang(`O nama`, `About us`),
+      href: parseByLang(`/o-nama/?lang=${checkParams}`, `/about-us/?lang=${checkParams}`),
+    },
+
+    { text: parseByLang('Kontakt', 'Contact'), href: `/kontakt/?lang=${checkParams}` },
+    {
+      text: parseByLang('Što posjetiti?', 'What to visit?'),
+      href: parseByLang(`/sto-posjetiti/?lang=${checkParams}`, `/what-to-visit/?lang=${checkParams}`),
+    },
+
     { text: parseByLang('Fotogalerije', 'Photo galleries'), href: '/kontakt' },
     { text: parseByLang('Google maps', 'Google maps'), href: parseByLang('/sto-posjetiti', '/what-to-visit') },
   ];

@@ -5,11 +5,11 @@
   max-height: 80lvh;
   height: 80vh;
   height: 80lvh;
-  will-change: contents;
+
   @media only screen and (max-width: $tablets) {
     height: 95vh;
     height: 95lvh;
-    // max-height: auto;
+    max-height: auto;
   }
 
   .playerContainer {

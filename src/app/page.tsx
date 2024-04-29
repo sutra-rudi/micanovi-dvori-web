@@ -18,9 +18,9 @@ import MapSection from './sections/MapSection';
 
 export default async function Home() {
   return (
-    <main className={styles.homeMain}>
+    <Suspense fallback={<Loading />}>
       <AppHeader />
-      <Suspense fallback={<Loading />}>
+      <main className={styles.homeMain}>
         <HeroSekcija />
         <OdmoriSeSekcija />
         <KampKuciceSekcija />
@@ -34,8 +34,8 @@ export default async function Home() {
         <DodatneInformacije isLanding />
         {/* <FAQsection /> */}
         <GallerySection />
-      </Suspense>
+      </main>
       <AppFooter />
-    </main>
+    </Suspense>
   );
 }
