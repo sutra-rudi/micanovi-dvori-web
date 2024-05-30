@@ -2,17 +2,14 @@
 
 import React from 'react';
 import styles from '../styles/appFooter.module.scss';
-import footerBg from '../img/globals/footer-main-bg.png';
+import footerBg from '../img/globals/micanovi-dvori-app-footer.png';
 import footerLogo from '../img/logos/micanovi-footer-logo.svg';
 import Image from 'next/image';
 import facebookIcon from '../img/icons/FACEBOOK-FOOTER.svg';
 import instaIcon from '../img/icons/INSTA-FOOTER.svg';
 import teleIcon from '../img/icons/TELE-FOOTER.svg';
 import footerArrow from '../img/icons/FOOTER-LINK-ARROW.svg';
-import footerAltBg from '../img/globals/footer-small-screen.png';
-import { SlSocialFacebook as FacebookIcon } from 'react-icons/sl';
-import { SlSocialInstagram as InstaIcon } from 'react-icons/sl';
-import { BsSend as MsgIcon } from 'react-icons/bs';
+import footerAltBg from '../img/globals/micanovi-dvori-app-footer-alt.png';
 import PaperDividTop from './PaperDividTop';
 import { useAppContext } from '../contexts/store';
 import { useWindowSize } from '../hooks/useWindowSize';
@@ -77,7 +74,8 @@ const AppFooter = (props: FooterInterface) => {
         alt='footerBackground'
         placeholder='blur'
         quality={100}
-        loading='lazy'
+        priority
+        loading='eager'
       />
 
       <div className={styles.footerMaster}>
@@ -94,17 +92,6 @@ const AppFooter = (props: FooterInterface) => {
                     <a href=''>{userLang === 'hr' ? content.titleHr : content.titleEng}</a>
                   </li>
                 ))}
-                {/* {userLang === 'hr'
-                  ? hr_links.map((link) => (
-                      <li key={link.href}>
-                        <a href={link.href}>{link.title}</a>
-                      </li>
-                    ))
-                  : en_links.map((link) => (
-                      <li key={link.href}>
-                        <a href={link.href}>{link.title}</a>
-                      </li>
-                    ))} */}
               </ul>
             </div>
           </div>
