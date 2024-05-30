@@ -29,7 +29,7 @@ export default async function Home() {
         {/* <ParallaxVideoSection /> */}
         <OnamaSekcija />
         <MapSection />
-        <ReviewsSection />
+        {/* <ReviewsSection /> */}
 
         <DodatneInformacije isLanding />
         {/* <FAQsection /> */}

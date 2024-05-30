@@ -3,9 +3,9 @@
 import React from 'react';
 import { useAppContext } from '../contexts/store';
 import AppButton from '../components/AppButton';
-import odm1 from '../img/sections/odmori-se-1.png';
-import odm2 from '../img/sections/odmori-se-2.png';
-import odm3 from '../img/sections/odmori-se-3.png';
+import odm1 from '../img/sections/micanovi-relax01.png';
+import odm2 from '../img/sections/micanovi-relax02.png';
+import odm3 from '../img/sections/micanovi-relax03.png';
 import Image from 'next/image';
 import styles from '../styles/odmoriSe.module.scss';
 import { useParallax } from 'react-scroll-parallax';

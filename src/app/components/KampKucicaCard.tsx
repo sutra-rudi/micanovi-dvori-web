@@ -19,23 +19,13 @@ interface KampKucicaCard {
   bulletsEn: string[] | any;
   checkAvailabilityHr: string;
   checkAvailabilityEng: string;
+  klasa: string;
 }
 
 const KampKucicaCard = (props: KampKucicaCard) => {
-  const {
-    imageUrl,
-    titleHr,
-    titleEng,
-    learnMoreHr,
-    learnMoreEng,
-    checkAvailabilityEng,
-    checkAvailabilityHr,
-    descHr,
-    descEng,
-    bulletsEn,
-    bulletsHr,
-  } = props;
-
+  const { imageUrl, titleHr, titleEng, learnMoreHr, learnMoreEng, descHr, descEng, bulletsEn, bulletsHr, klasa } =
+    props;
+  const parseClass = `${styles[klasa]}`;
   const {
     state: { userLang },
   } = useAppContext();
@@ -47,7 +37,7 @@ const KampKucicaCard = (props: KampKucicaCard) => {
   };
 
   return (
-    <article className={styles.kampKucicaCard}>
+    <article className={`${styles.kampKucicaCard} ${parseClass}`}>
       <div className={styles.kampKucicaImageCont}>
         <Image fill src={imageUrl} alt='camp house thumbnail' />
       </div>
@@ -59,12 +49,6 @@ const KampKucicaCard = (props: KampKucicaCard) => {
         <div className={styles.kampKucicaCtaCont}>
           <a href=''>
             <span>{parseByLang(learnMoreHr, learnMoreEng, userLang)}</span>
-            <span>
-              <ArticleArrow className={styles.articleArrow} />
-            </span>
-          </a>
-          <a href=''>
-            <span>{parseByLang(checkAvailabilityHr, checkAvailabilityEng, userLang)}</span>
             <span>
               <ArticleArrow className={styles.articleArrow} />
             </span>

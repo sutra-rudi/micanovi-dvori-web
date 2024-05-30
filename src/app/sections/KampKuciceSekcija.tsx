@@ -22,6 +22,7 @@ const KampKuciceSekcija = () => {
             descHr,
             bulletsHr,
             bulletsEn,
+            klasa,
           } = item;
           return (
             <KampKucicaCard
@@ -37,6 +38,7 @@ const KampKuciceSekcija = () => {
               descHr={descHr}
               bulletsHr={bulletsHr}
               bulletsEn={bulletsEn}
+              klasa={klasa}
             />
           );
         })}

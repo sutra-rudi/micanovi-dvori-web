@@ -1,7 +1,7 @@
-import kucicaThumb from '../img/sections/kamp-kucica-01.png';
-import kucica1 from '../img/sections/card-1.png';
-import kucica2 from '../img/sections/card-2.png';
-import kucica3 from '../img/sections/card-3.png';
+import kucica1 from '../img/sections/kucice/micanovi-kartica-1-front.png';
+import kucica2 from '../img/sections/kucice/micanovi-kartica-2-front.png';
+import kucica3 from '../img/sections/kucice/micanovi-kartica-3-front.png';
+import kucica4 from '../img/sections/kucice/micanovi-kartica-4-front.png';
 
 export const kampKuciceContent = [
   {
@@ -17,6 +17,7 @@ export const kampKuciceContent = [
     bulletsHr: [],
     bulletsEn: [],
     imageUrl: kucica1,
+    klasa: 'closed-dio',
   },
   {
     titleHr: 'Terasa',
@@ -30,6 +31,7 @@ export const kampKuciceContent = [
     descEn: null,
     bulletsHr: ['130 sjedećih mjesta', 'Muzika', 'Šank', 'Autohtoni dalmatinski ambijent'],
     bulletsEn: ['130 seating places', 'Live music', 'Bar', 'Authentic Dalmatian ambiance'],
+    klasa: 'terasa-dio',
   },
   {
     titleHr: 'Konoba',
@@ -41,6 +43,7 @@ export const kampKuciceContent = [
     imageUrl: kucica3,
     bulletsHr: ['80 sjedećih mjesta', 'Muzika', 'Šank', 'Autohtoni dalmatinski ambijent'],
     bulletsEn: ['80 seating places', 'Live music', 'Bar', 'Authentic Dalmatian ambiance'],
+    klasa: 'konoba-dio',
   },
   {
     titleHr: 'Okoliš i staja',
@@ -51,6 +54,7 @@ export const kampKuciceContent = [
     checkAvailabilityEng: '360 View',
     bulletsHr: ['130 sjedećih mjesta', 'Muzika', 'Šank', 'Autohtoni dalmatinski ambijent'],
     bulletsEn: ['130 seating places', 'Live music', 'Bar', 'Authentic Dalmatian ambiance'],
-    imageUrl: kucicaThumb,
+    imageUrl: kucica4,
+    klasa: 'okolis-dio',
   },
 ];
