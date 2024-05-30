@@ -17,6 +17,7 @@ import ReviewsSection from './sections/ReviewsSection';
 import MapSection from './sections/MapSection';
 
 export default async function Home() {
+  const mapboxApiKey = process.env.MAPBOX_API_KEY;
   return (
     <Suspense fallback={<Loading />}>
       <AppHeader />
@@ -28,7 +29,7 @@ export default async function Home() {
         <ExploreCampSection />
         {/* <ParallaxVideoSection /> */}
         <OnamaSekcija />
-        <MapSection />
+        <MapSection apiKey={mapboxApiKey!} />
         {/* <ReviewsSection /> */}
 
         <DodatneInformacije isLanding />

@@ -7,6 +7,7 @@ import { UserLanguage } from '../types/appState';
 import { taxonomyEn, taxonomyHr } from '../staticContentData/exploreTaxonomyCont';
 import Image from 'next/image';
 import styles from '../styles/exploreCampSection.module.scss';
+import { galleryImages } from '../staticContentData/staticImageImports';
 
 const ExploreCampSection = () => {
   const [currentActiveFilter, setCurrentActiveFilter] = React.useState<string>('Vinski Podrum');
@@ -45,14 +46,21 @@ const ExploreCampSection = () => {
         <h2>{parseByLang('Fotogalerija', 'Photo Gallery', userLang)}</h2>
       </div>
 
-      <div className={styles.taxonomyFilterContainer}>
+      {/* <div className={styles.taxonomyFilterContainer}>
         <TaxonomyFilterCont />
-      </div>
+      </div> */}
 
       <div className={styles.galleryContainer}>
-        {demoGallery.map((galItem) => (
-          <div key={galItem} className={styles.imageContainer}>
-            <Image src={'https://placehold.co/600x400'} fill alt='placeholder' />
+        {galleryImages.map((galItem) => (
+          <div key={galItem.src} className={styles.imageContainer}>
+            <Image
+              src={galItem.src}
+              placeholder='blur'
+              blurDataURL={galItem.blurDataURL}
+              priority
+              fill
+              alt='placeholder'
+            />
           </div>
         ))}
       </div>

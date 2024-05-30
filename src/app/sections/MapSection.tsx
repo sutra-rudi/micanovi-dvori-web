@@ -2,14 +2,15 @@
 
 import Image from 'next/image';
 import React from 'react';
-import mapPlaceholder from '../img/sections/map-placeholder-micanovi.png';
+// import mapPlaceholder from '../img/sections/map-placeholder-micanovi.png';
 import styles from '../styles/mapSection.module.scss';
-const MapSection = () => {
+import MapboxMapa from '../components/MapboxMapa';
+
+const MapSection = ({ apiKey }: { apiKey: string }) => {
   return (
     <section className={styles.sectionMain}>
-      <div className={styles.mapContainer}>
-        <Image fill src={mapPlaceholder} alt='mapa' priority />
-      </div>
+      <MapboxMapa apiKey={apiKey} />
+      {/* <div className={styles.mapContainer}><Image fill src={mapPlaceholder} alt='mapa' priority /></div> */}
     </section>
   );
 };
