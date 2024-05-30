@@ -9,13 +9,12 @@ import styles from '../styles/appHeader.module.scss';
 import AppButton from './AppButton';
 import LanguageSwitch from './LanguageSwitch';
 import { Spin as Hamburger } from 'hamburger-react';
-import instaIcon from '../img/icons/MOBILE-MENU-SOCIAL-2.svg';
-import facebookIcon from '../img/icons/MOBILE-MENU-SOCIAL-1.svg';
-import teleIcon from '../img/icons/MOBILE-MENU-SOCIAL-3.svg';
 
 import mobilePapir from '../img/globals/MOBILE-PAPIR.svg';
 import { useAppContext } from '../contexts/store';
 import { useSearchParams } from 'next/navigation';
+
+import { FaFacebookF as FacebookIcon, FaTelegramPlane as TeleIcon, FaInstagram as InstaIcon } from 'react-icons/fa';
 
 const AppHeader = () => {
   const {
@@ -155,13 +154,13 @@ const AppHeader = () => {
 
             <div className={styles.socialBlock}>
               <div className={styles.socialBlockImage}>
-                <Image width={20} height={20} alt='icon' src={facebookIcon} />
+                <FacebookIcon size={20} color='#2f476f' />
               </div>
               <div className={styles.socialBlockImage}>
-                <Image width={20} height={20} alt='icon' src={instaIcon} />
+                <InstaIcon size={20} color='#2f476f' />
               </div>
               <div className={styles.socialBlockImage}>
-                <Image width={20} height={20} alt='icon' src={teleIcon} />
+                <TeleIcon size={20} color='#2f476f' />
               </div>
             </div>
 
