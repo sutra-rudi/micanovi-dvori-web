@@ -4,7 +4,7 @@ import AppFooter from '../components/AppFooter';
 import kontaktHero from '../img/heros/Kayak gallery-1.png';
 import AppHeader from '../components/AppHeader';
 import Loading from './loading';
-import FAQsection from '../sections/FAQsection';
+// import FAQsection from '../sections/FAQsection';
 import dynamic from 'next/dynamic';
 
 export default async function Kontakt({ searchParams }: any) {
@@ -22,7 +22,7 @@ export default async function Kontakt({ searchParams }: any) {
           imgSrc={kontaktHero}
         />
 
-        <FAQsection />
+        {/* <FAQsection /> */}
       </main>
       <AppFooter />
     </Suspense>
