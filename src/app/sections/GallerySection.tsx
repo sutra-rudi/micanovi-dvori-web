@@ -1,11 +1,14 @@
 'use client';
 
 import React from 'react';
-import slika1 from '../img/sections/karuzel1.png';
-import slika2 from '../img/sections/karuzel2.png';
-import slika3 from '../img/sections/karuzel3.png';
-import slika4 from '../img/sections/karuzel4.png';
-import slika5 from '../img/sections/imag3.png';
+import kar1 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin01.png';
+import kar2 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin02.png';
+import kar3 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin03.png';
+import kar4 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin04.png';
+import kar5 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin05.png';
+import kar6 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin06.png';
+import kar7 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin07.png';
+
 import styles from '../styles/gallerySection.module.scss';
 import Image from 'next/image';
 import paralOne from '../img/sections/PARAL-UP.png';
@@ -22,6 +25,8 @@ const RecoletaSemiBold = localFont({
 });
 
 const GallerySection = () => {
+  const imgArr = [kar1, kar2, kar3, kar4, kar5, kar6, kar7];
+
   const {
     state: { userLang },
   } = useAppContext();
@@ -84,23 +89,19 @@ const GallerySection = () => {
       <ParallaxBanner className={styles.gallerySectionParallax} layers={[background, foreground, headline]} />
 
       <Splide className={styles.swiper} options={splideOptions}>
-        <SplideSlide className={styles.swiperSlide}>
-          <Image draggable={false} fill src={slika1} alt='slika' />
-        </SplideSlide>
-        <SplideSlide className={styles.swiperSlide}>
-          <Image draggable={false} fill src={slika2} alt='slika' />
-        </SplideSlide>
-        <SplideSlide className={styles.swiperSlide}>
-          <Image draggable={false} fill src={slika3} alt='slika' />
-        </SplideSlide>
-
-        <SplideSlide className={styles.swiperSlide}>
-          <Image draggable={false} fill src={slika4} alt='slika' />
-        </SplideSlide>
-
-        <SplideSlide className={styles.swiperSlide}>
-          <Image draggable={false} fill src={slika5} alt='slika' />
-        </SplideSlide>
+        {imgArr.map((img) => (
+          <SplideSlide key={img.src} className={styles.swiperSlide}>
+            <Image
+              draggable={false}
+              fill
+              src={img.src}
+              alt='image of camping villiage'
+              placeholder='blur'
+              blurDataURL={img.blurDataURL}
+              loading='lazy'
+            />
+          </SplideSlide>
+        ))}
       </Splide>
     </section>
   );
