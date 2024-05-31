@@ -16,7 +16,7 @@ export const kampKuciceContent = [
     descEn: `The menu at Mićanovi Dvori, a rural estate, offers all the delicacies of a long-forgotten era. Don't miss the opportunity to taste them; they are exactly as our grandmothers used to prepare them.`,
     bulletsHr: [],
     bulletsEn: [],
-    imageUrl: kucica1,
+    imageUrl: kucica3,
     klasa: 'closed-dio',
   },
   {
@@ -40,7 +40,7 @@ export const kampKuciceContent = [
     learnMoreEn: 'Photo Gallery',
     checkAvailabilityHr: '360 slika',
     checkAvailabilityEng: '360 View',
-    imageUrl: kucica3,
+    imageUrl: kucica4,
     bulletsHr: ['80 sjedećih mjesta', 'Muzika', 'Šank', 'Autohtoni dalmatinski ambijent'],
     bulletsEn: ['80 seating places', 'Live music', 'Bar', 'Authentic Dalmatian ambiance'],
     klasa: 'konoba-dio',
@@ -54,7 +54,7 @@ export const kampKuciceContent = [
     checkAvailabilityEng: '360 View',
     bulletsHr: ['130 sjedećih mjesta', 'Muzika', 'Šank', 'Autohtoni dalmatinski ambijent'],
     bulletsEn: ['130 seating places', 'Live music', 'Bar', 'Authentic Dalmatian ambiance'],
-    imageUrl: kucica4,
+    imageUrl: kucica1,
     klasa: 'okolis-dio',
   },
 ];

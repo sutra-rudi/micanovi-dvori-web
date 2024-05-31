@@ -5,6 +5,7 @@ import React from 'react';
 import styles from '../styles/kampKucicaSekcija.module.scss';
 import { useAppContext } from '../contexts/store';
 import { parseByLang } from '../utils/parseByLang';
+import { Link as ScrollLink } from 'react-scroll';
 
 import { TfiArrowTopRight as ArticleArrow } from 'react-icons/tfi';
 interface KampKucicaCard {
@@ -46,14 +47,12 @@ const KampKucicaCard = (props: KampKucicaCard) => {
 
         {descHr ? <p>{parseByLang(descHr, descEng, userLang)}</p> : bulletsHr ? <ul>{parseBullets()}</ul> : null}
 
-        <div className={styles.kampKucicaCtaCont}>
-          <a href=''>
-            <span>{parseByLang(learnMoreHr, learnMoreEng, userLang)}</span>
-            <span>
-              <ArticleArrow className={styles.articleArrow} />
-            </span>
-          </a>
-        </div>
+        <ScrollLink to='#gallery-section' duration={500} smooth className={styles.kampKucicaCtaCont}>
+          <span>{parseByLang(learnMoreHr, learnMoreEng, userLang)}</span>
+          <span>
+            <ArticleArrow className={styles.articleArrow} />
+          </span>
+        </ScrollLink>
       </div>
     </article>
   );

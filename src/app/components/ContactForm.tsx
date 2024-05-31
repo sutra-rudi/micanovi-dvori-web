@@ -2,7 +2,7 @@
 import React, { FormEvent } from 'react';
 import styles from '../styles/contact.module.scss';
 import { useAppContext } from '../contexts/store';
-import webContent from '../../../public/webdata/webcontent.json';
+
 import AppButton from './AppButton';
 import { useFormspark } from '@formspark/use-formspark';
 
@@ -63,7 +63,7 @@ const ContactForm = () => {
             type='text'
             placeholder={parseLang('Telefon', 'Phone')}
           />
-          <select onChange={handleActivitySelect} name='aktivnost' id=''>
+          {/* <select onChange={handleActivitySelect} name='aktivnost' id=''>
             <option value='' defaultValue={'Odaberi aktivnost'} selected disabled>
               Odaberi aktivnost
             </option>
@@ -75,7 +75,7 @@ const ContactForm = () => {
                   </option>
                 )
             )}
-          </select>
+          </select> */}
         </div>
         <div className={styles.formBlockRight}>
           <textarea
