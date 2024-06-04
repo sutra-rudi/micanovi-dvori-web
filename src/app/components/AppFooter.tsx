@@ -81,11 +81,11 @@ const AppFooter = (props: FooterInterface) => {
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
                 <span>{parseByLang(`Kontakt forma/?lang=${checkParams}`, `Contact form/?lang=${checkParams}`)}</span>
               </a>
-              <a href='/#FAQ'>
+              <a href={`/#FAQ?lang=${checkParams}`}>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
                 <span>{parseByLang('FAQ', 'FAQ')}</span>
               </a>
-              <a href='/obrovacki-kraj'>
+              <a href={`/obrovacki-kraj?lang=${checkParams}`}>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
                 <span>{parseByLang('Obrovački kraj', 'Obrovac region')}</span>
               </a>
@@ -103,12 +103,11 @@ const AppFooter = (props: FooterInterface) => {
           <div className={styles.footerBlock}>
             <p>{parseByLang('Kontaktirajte nas', 'Contact us')}</p>
             <div className={styles.contactStack}>
-              <a href='https://www.google.com/maps/dir//Obala+hr.+Čas.+Senada+Ž.+6,+23450,+Obrovac/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x4761c76f06da2a03:0x8abf7d8f6eb1b3c1?sa=X&ved=1t:707&ictx=111'>{`6 Obala hr. Čas. Senada Ž.,\nObrovac, Croatia`}</a>
+              <a href='https://www.google.com/maps?client=safari&rls=en&oe=UTF-8&um=1&ie=UTF-8&fb=1&gl=hr&sa=X&geocode=KTvMTaZvx2FHMbITmAWCma0K&daddr=Kruševo,+Župani+Drage+bb,+23450,+Obrovac'>{`Kruševo, Župani Drage bb,\n23450, Obrovac`}</a>
               <a href='mailto:info@riva-rafting-centar.hr'>info@riva-rafting-centar.hr</a>
               <a href='tel:+38523689920'>023 689 920</a>
             </div>
           </div>
-
           <div className={styles.footerDislaimerTrack}>
             <div className={styles.disclaimerSig}>
               <div className={styles.disclaimerSigIn}>
