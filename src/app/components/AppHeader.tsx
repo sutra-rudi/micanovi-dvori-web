@@ -31,7 +31,7 @@ const AppHeader = () => {
 
     { text: parseByLang('Kontakt', 'Contact'), href: `/kontakt/?lang=${checkParams}` },
     {
-      text: parseByLang('Što posjetiti?', 'What to visit?'),
+      text: parseByLang('Što posjetiti u okolici?', 'What to visit in the surroundings?'),
       href: parseByLang(`/obrovacki-kraj/?lang=${checkParams}`, `/obrovacki-kraj/?lang=${checkParams}`),
     },
 
