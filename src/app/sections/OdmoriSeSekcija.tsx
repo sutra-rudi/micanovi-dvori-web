@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useAppContext } from '../contexts/store';
+
 import AppButton from '../components/AppButton';
 import odm1 from '../img/sections/micanovi-relax01.png';
 import odm2 from '../img/sections/micanovi-relax02.png';
@@ -9,13 +9,14 @@ import odm3 from '../img/sections/micanovi-relax03.png';
 import Image from 'next/image';
 import styles from '../styles/odmoriSe.module.scss';
 import { useParallax } from 'react-scroll-parallax';
+import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
 
 const OdmoriSeSekcija = () => {
-  const {
-    state: { userLang },
-  } = useAppContext();
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
 
-  const parseByLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);
+  const parseByLang = (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString);
 
   const sectionContentHr = `Gospodarstvo Mićanovi Dvori za sezonu 2024. otvoreni su isključivo za goste koji su u aranžmanu koje pruža Riva Rafting Centar svojim gostima i partnerskim agencijama, što znači da gastro ponuda ne pružamo gostima izvan navedenog aranžmana.`;
 

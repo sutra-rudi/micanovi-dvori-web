@@ -14,10 +14,17 @@ const RecoletaBold = localFont({
 import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
 
 import ReactPlayer from 'react-player';
+import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
 
 const HeroSekcija = () => {
   const [isReady, setIsReady] = React.useState(false);
   const playerRef = React.useRef<ReactPlayer>(null);
+
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
+
+  const parseByLang = (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString);
 
   const onReady = React.useCallback(() => {
     if (!isReady) {
@@ -27,17 +34,8 @@ const HeroSekcija = () => {
     }
   }, [isReady]);
 
-  const {
-    state: { userLang },
-  } = useAppContext();
-
   const headline_en = `Welcome to \n Mićanovi Dvori`;
   const headline_hr = `Dobro došli na\n Mićanove Dvore`;
-
-  const langCheck = React.useCallback(
-    (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString),
-    [userLang]
-  );
 
   const background: BannerLayer = {
     translateY: [0, 60],
@@ -70,7 +68,7 @@ const HeroSekcija = () => {
     shouldAlwaysCompleteAnimation: false,
     children: (
       <div className={styles.heroCtaKontejner}>
-        <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{langCheck(headline_hr, headline_en)}</h1>
+        <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{parseByLang(headline_hr, headline_en)}</h1>
       </div>
     ),
   };
@@ -83,7 +81,7 @@ const HeroSekcija = () => {
     children: (
       <div className={styles.heroCtaHeaderBacksideWrapper}>
         <h1 className={`${RecoletaBold.className} ${styles.heroCtaHeaderBackside}`}>
-          {langCheck(headline_hr, headline_en)}
+          {parseByLang(headline_hr, headline_en)}
         </h1>
       </div>
     ),

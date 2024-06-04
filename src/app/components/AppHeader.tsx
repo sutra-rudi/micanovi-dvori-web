@@ -11,19 +11,17 @@ import LanguageSwitch from './LanguageSwitch';
 import { Spin as Hamburger } from 'hamburger-react';
 import { Link as ScrollLink } from 'react-scroll';
 import mobilePapir from '../img/globals/MOBILE-PAPIR.svg';
-import { useAppContext } from '../contexts/store';
+
 import { useSearchParams } from 'next/navigation';
 
 import { FaFacebookF as FacebookIcon, FaTelegramPlane as TeleIcon, FaInstagram as InstaIcon } from 'react-icons/fa';
+import { UserLanguage } from '../types/appState';
 
 const AppHeader = () => {
-  const {
-    state: { userLang },
-  } = useAppContext();
-
-  const parseByLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
+
+  const parseByLang = (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString);
 
   const navLinksOne = [
     {

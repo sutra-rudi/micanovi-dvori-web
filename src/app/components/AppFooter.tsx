@@ -11,47 +11,22 @@ import teleIcon from '../img/icons/TELE-FOOTER.svg';
 import footerArrow from '../img/icons/FOOTER-LINK-ARROW.svg';
 import footerAltBg from '../img/globals/micanovi-dvori-app-footer-alt.png';
 import PaperDividTop from './PaperDividTop';
-import { useAppContext } from '../contexts/store';
+
 import { useWindowSize } from '../hooks/useWindowSize';
 
 import { kampKuciceContent } from '../staticContentData/kampKucice';
+import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
 
 interface FooterInterface {
   isAbout?: boolean;
 }
 
 const AppFooter = (props: FooterInterface) => {
-  const {
-    state: { userLang },
-  } = useAppContext();
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
 
-  const en_links = [
-    { title: 'Hiking tour', href: '/activities/walking-tour' },
-    { title: 'Kayak tours', href: '/activities/kayak' },
-    { title: 'Rafting tour', href: '/activities/Rafting-on-Zrmanja' },
-    { title: 'Kayaking from Zrmanja to the Adriatic Sea', href: '/activities/Kayak-River-to-the-sea' },
-    { title: 'Stand Up Paddle', href: '/activities/Stand-Up-Paddle-Zrmanja' },
-    { title: 'Boat Tour', href: '/activities/Zrmanja-by-boat' },
-    { title: 'Jeep Safari', href: '/activities/Velebit-Jeep-safari' },
-    { title: 'Caving', href: '/activities/Cave-Modric' },
-    { title: 'Horseback Riding', href: '/activities/horses' },
-    { title: 'Cycling', href: '/activities/Bike-riding' },
-  ];
-
-  const hr_links = [
-    { title: 'Pješačka Tura', href: '/aktivnosti/pjesacke-ture' },
-    { title: 'Kayak Ture', href: '/aktivnosti/kayak-tura' },
-    { title: 'Rafting Tura', href: '/aktivnosti/Rafting' },
-    { title: 'Kayak po Zrmanji do Jadranskog mora', href: '/aktivnosti/Kayak-Zrmanja-More' },
-    { title: 'Stand Up Paddle', href: '/aktivnosti/Stand-Up-Paddle' },
-    { title: 'Vožnja Brodom', href: '/aktivnosti/Zrmanja-brodom' },
-    { title: 'Jeep Safari', href: '/aktivnosti/Jeep-safari' },
-    { title: 'Špiljarenje', href: '/aktivnosti/Spiljarenje' },
-    { title: 'Jahanje', href: '/aktivnosti/Jahanje' },
-    { title: 'Vožnja Bicikla', href: '/aktivnosti/Bicik' },
-  ];
-
-  const parseByLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);
+  const parseByLang = (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString);
 
   const clientWindowSize = useWindowSize();
 
@@ -89,7 +64,7 @@ const AppFooter = (props: FooterInterface) => {
               <ul>
                 {kampKuciceContent.map((content, index) => (
                   <li key={index}>
-                    <a href=''>{userLang === 'hr' ? content.titleHr : content.titleEng}</a>
+                    <a href=''>{parseByLang(content.titleHr, content.titleEng)}</a>
                   </li>
                 ))}
               </ul>
@@ -98,13 +73,13 @@ const AppFooter = (props: FooterInterface) => {
           <div className={styles.footerBlock}>
             <p>{parseByLang('Linkovi', 'Links')}</p>
             <div className={styles.linkStack}>
-              <a href={parseByLang('/o-nama', '/about-us')}>
+              <a href={parseByLang(`/o-nama/?lang=${checkParams}`, `/about-us?lang=${checkParams}`)}>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
                 <span>{parseByLang('O nama', 'About us')}</span>
               </a>
               <a href={'/kontakt'}>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
-                <span>{parseByLang('Kontakt forma', 'Contact form')}</span>
+                <span>{parseByLang(`Kontakt forma/?lang=${checkParams}`, `Contact form/?lang=${checkParams}`)}</span>
               </a>
               <a href='/#FAQ'>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
@@ -112,7 +87,7 @@ const AppFooter = (props: FooterInterface) => {
               </a>
               <a href='/obrovacki-kraj'>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
-                <span>Obrovački kraj</span>
+                <span>{parseByLang('Obrovački kraj', 'Obrovac region')}</span>
               </a>
               <a href=''>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
@@ -120,7 +95,7 @@ const AppFooter = (props: FooterInterface) => {
               </a>
               <a href=''>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
-                <span>Mičanovi dvori</span>
+                <span>Mićanovi dvori</span>
               </a>
             </div>
           </div>
