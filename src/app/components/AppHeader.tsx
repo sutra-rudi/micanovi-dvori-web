@@ -38,7 +38,7 @@ const AppHeader = () => {
     { text: parseByLang('Fotogalerije', 'Photo galleries'), href: `` },
     {
       text: parseByLang('Google maps', 'Google maps'),
-      href: `https://www.google.com/maps/dir//Mićanovi+Dvori+-+Restaurant+%26+Camping+Village+Zrmanja,+Kruševo,+Župani+Drage+bb,+23450,+Obrovac/@44.185102,15.6901721,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x4761c76fa64dcc3b:0xaad9982059813b2!2m2!1d15.692747!2d44.185102?entry=ttu`,
+      href: `https://www.google.com/maps?client=safari&rls=en&oe=UTF-8&um=1&ie=UTF-8&fb=1&gl=hr&sa=X&geocode=KTvMTaZvx2FHMbITmAWCma0K&daddr=Kruševo,+Župani+Drage+bb,+23450,+Obrovac`,
     },
   ];
   const navLinksTwo = [
