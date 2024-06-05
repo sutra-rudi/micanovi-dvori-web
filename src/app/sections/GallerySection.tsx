@@ -25,7 +25,9 @@ import localFont from 'next/font/local';
 // @ts-ignore
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import { useAppContext } from '../contexts/store';
+
+import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
 const RecoletaSemiBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-SemiBold.ttf', weight: '600' }],
 });
@@ -33,9 +35,12 @@ const RecoletaSemiBold = localFont({
 const GallerySection = () => {
   const imgArr = [kar1, kar2, kar3, kar4, kar5, kar6, kar7, kar8, kar9, kar10, kar11, kar12, kar13];
 
-  const {
-    state: { userLang },
-  } = useAppContext();
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
+  const parseByLang = React.useCallback(
+    (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString),
+    [checkParams]
+  );
 
   const title_hr = 'NAŠ DOM - RIJEKA ZRMANJA';
   const content_hr =
@@ -76,8 +81,8 @@ const GallerySection = () => {
     children: (
       <div className={styles.gallerySectionTextOverlay}>
         <div className={styles.gallerySectionTextOverlayContent}>
-          <h2 className={RecoletaSemiBold.className}>{userLang === 'hr' ? title_hr : title_eng}</h2>
-          <h4>{userLang === 'hr' ? content_hr : content_eng}</h4>
+          <h2 className={RecoletaSemiBold.className}>{parseByLang(title_hr, title_eng)}</h2>
+          <h4>{parseByLang(content_hr, content_eng)}</h4>
         </div>
       </div>
     ),

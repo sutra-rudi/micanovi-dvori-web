@@ -13,6 +13,8 @@ import AppButton from '../components/AppButton';
 import Loading from '../loading';
 import Image from 'next/image';
 import bottomImage from '../img/sections/paralax-video-bottomsectionimage.png';
+import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
 
 const RecoletaSemiBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-SemiBold.ttf', weight: '600' }],
@@ -20,9 +22,12 @@ const RecoletaSemiBold = localFont({
 const ParallaxVideoSection = () => {
   const [isReady, setIsReady] = React.useState(false);
   const playerRef = React.useRef<ReactPlayer>(null);
-  const {
-    state: { userLang },
-  } = useAppContext();
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
+  const parseByLang = React.useCallback(
+    (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString),
+    [checkParams]
+  );
   const onReady = React.useCallback(() => {
     if (!isReady) {
       // const timeToStart = 7 * 60 + 12.6;
@@ -37,8 +42,8 @@ const ParallaxVideoSection = () => {
     children: (
       <div className={styles.gallerySectionTextOverlay}>
         <div className={styles.gallerySectionTextOverlayContent}>
-          <h2 className={RecoletaSemiBold.className}>{parseByLang(headline_hr, headline_eng, userLang)}</h2>
-          <h4>{parseByLang(content_hr, content_eng, userLang)}</h4>
+          <h2 className={RecoletaSemiBold.className}>{parseByLang(headline_hr, headline_eng)}</h2>
+          <h4>{parseByLang(content_hr, content_eng)}</h4>
           <AppButton isAbout content='Saznaj više' />
         </div>
       </div>
@@ -81,13 +86,12 @@ const ParallaxVideoSection = () => {
         <Image src={bottomImage} fill alt='bottom image' />
         <div className={styles.bottomImageTextOverlay}>
           <h4 className={RecoletaSemiBold.className}>
-            {parseByLang('Doručak u Mićanovim Dvorima', 'Breakfast at Mićanovi Dvori', userLang)}
+            {parseByLang('Doručak u Mićanovim Dvorima', 'Breakfast at Mićanovi Dvori')}
           </h4>
           <p>
             {parseByLang(
               'Odmah pored kampa se nalazi naš ugostiteljski objekt\nu kojem se poslužuju doručci na prekrasnoj terasi.',
-              'Right next to the campsite is our catering facility\nwhere breakfast is served on a beautiful terrace.',
-              userLang
+              'Right next to the campsite is our catering facility\nwhere breakfast is served on a beautiful terrace.'
             )}
           </p>
         </div>

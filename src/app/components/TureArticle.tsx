@@ -4,7 +4,8 @@ import React from 'react';
 import style from '../styles/turePonuda.module.scss';
 import AppButton from './AppButton';
 import Image, { StaticImageData } from 'next/image';
-import { useAppContext } from '../contexts/store';
+import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
 
 interface TureKarticaData {
   subtitle: string;
@@ -16,10 +17,13 @@ interface TureKarticaData {
 
 const TureArticle = (props: TureKarticaData) => {
   const { subtitle, title, content, isCTA, imageSRC } = props;
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
+  const parseByLang = React.useCallback(
+    (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString),
+    [checkParams]
+  );
 
-  const {
-    state: { userLang },
-  } = useAppContext();
   return (
     <article className={isCTA ? `${style.tureArticle}` : `${style.tureArticle} ${style.articleReverse}`}>
       <div className={style.imgHolder}>
@@ -31,7 +35,7 @@ const TureArticle = (props: TureKarticaData) => {
           <h2 className={style.contentTitle}>{title}</h2>
         </div>
         <p className={style.contentText}>{content}</p>
-        {isCTA && <AppButton content={userLang === 'hr' ? 'Kontaktirajte nas' : 'Contact us'} />}
+        {isCTA && <AppButton content={parseByLang('Kontaktirajte nas', 'Contact us')} />}
       </div>
     </article>
   );
