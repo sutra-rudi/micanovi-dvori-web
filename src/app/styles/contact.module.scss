@@ -174,10 +174,12 @@
   }
 
   .formBlockLeft {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    // grid-template-columns: repeat(1, 1fr);
     width: 100%;
-    place-items: start;
+    flex-direction: column;
+    place-items: flex-start;
+    justify-content: flex-start;
     gap: 0.85rem;
 
     @media only screen and (max-width: $phones) {
@@ -195,7 +197,7 @@
       padding: 0 1rem;
       color: $skrozTamnaZelena;
       border-radius: 5px;
-      font-size: $heading4;
+      font-size: $baseFontSize;
       line-height: 130%;
       font-family: inherit;
       font-weight: 400;
@@ -207,7 +209,7 @@
       &::placeholder {
         opacity: 1;
         color: $skrozTamnaZelena;
-        font-size: $heading4;
+        font-size: $baseFontSize;
         line-height: 130%;
         font-family: inherit;
         font-weight: 400;
@@ -225,7 +227,7 @@
     }
 
     option {
-      font-size: $heading4;
+      font-size: $baseFontSize;
       line-height: 130%;
       font-family: inherit;
       font-weight: 400;
@@ -253,7 +255,7 @@
       outline: none;
       background: $contactFormInputBg;
       border-radius: 5px;
-      font-size: $heading4;
+      font-size: $baseFontSize;
       line-height: 130%;
       font-family: inherit;
       font-weight: 400;
@@ -263,7 +265,7 @@
       &::placeholder {
         color: $skrozTamnaZelena;
         opacity: 1;
-        font-size: $heading4;
+        font-size: $baseFontSize;
         line-height: 130%;
         font-family: inherit;
         font-weight: 400;

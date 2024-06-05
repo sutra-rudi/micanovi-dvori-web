@@ -13,8 +13,7 @@ const RecoletaBold = localFont({
 import { BannerLayer, ParallaxBanner, useParallax } from 'react-scroll-parallax';
 import PaperDividBot from '../components/PaperDividBot';
 
-import cardImage from '../img/heros/Kayak gallery-1.png';
-
+import micanoviParallax from '../img/globals/micanovi-kontakt-forma-parallax.png';
 import PaperDividTop from '../components/PaperDividTop';
 import ContactForm from '../components/ContactForm';
 import {
@@ -70,7 +69,7 @@ const PageContent = (content: AboutUsPageContent) => {
                   <span className={styles.contactIcon}>
                     <LocationIcon size={24} />
                   </span>
-                  <span className={styles.contactText}>6 Obala hr. Čas. Senada Ž., Obrovac, Croatia</span>
+                  <span className={styles.contactText}>Župani, Kruševo, Drage 7a 23450 Obrovac</span>
                 </a>
 
                 <a href={'mailto:info@riva-rafting-centar.hr'}>
@@ -90,7 +89,7 @@ const PageContent = (content: AboutUsPageContent) => {
             </div>
             <div className={styles.contactImageCont}>
               {/* @ts-ignore */}
-              <Image ref={paralaImage} fill src={cardImage} alt='kaya tour' />
+              <Image ref={paralaImage} fill src={micanoviParallax} alt='kaya tour' />
             </div>
           </div>
         </div>

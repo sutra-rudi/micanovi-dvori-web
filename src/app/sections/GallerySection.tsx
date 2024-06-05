@@ -8,6 +8,12 @@ import kar4 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin04.png';
 import kar5 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin05.png';
 import kar6 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin06.png';
 import kar7 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin07.png';
+import kar8 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin08.png';
+import kar9 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin09.png';
+import kar10 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin10.png';
+import kar11 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin11.png';
+import kar12 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin12.png';
+import kar13 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin13.png';
 
 import styles from '../styles/gallerySection.module.scss';
 import Image from 'next/image';
@@ -25,7 +31,7 @@ const RecoletaSemiBold = localFont({
 });
 
 const GallerySection = () => {
-  const imgArr = [kar1, kar2, kar3, kar4, kar5, kar6, kar7];
+  const imgArr = [kar1, kar2, kar3, kar4, kar5, kar6, kar7, kar8, kar9, kar10, kar11, kar12, kar13];
 
   const {
     state: { userLang },

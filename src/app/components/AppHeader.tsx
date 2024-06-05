@@ -120,7 +120,15 @@ const AppHeader = () => {
               <HeaderBaseTwo />
             </div>
             <div className={styles.navInnerParent}>
-              <AppButton isNav content={parseByLang('KAKO DO NAS?', 'HOW TO FIND US?')} />
+              {/* <AppButton isNav content={parseByLang('KAKO DO NAS?', 'HOW TO FIND US?')} /> */}
+              <Link
+                className={styles.navCta}
+                href={
+                  'https://www.google.com/maps?client=safari&rls=en&oe=UTF-8&um=1&ie=UTF-8&fb=1&gl=hr&sa=X&geocode=KTvMTaZvx2FHMbITmAWCma0K&daddr=Kruševo,+Župani+Drage+bb,+23450,+Obrovac'
+                }
+              >
+                <span>{parseByLang('KAKO DO NAS?', 'HOW TO FIND US?')}</span>
+              </Link>
               <div className={styles.navInnerParentLang}>
                 <LanguageSwitch />
               </div>

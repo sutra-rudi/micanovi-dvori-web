@@ -11,7 +11,6 @@ const ContactForm = () => {
     name: '',
     email: '',
     phone: '',
-    activity: '',
     message: '',
   });
 
@@ -37,11 +36,6 @@ const ContactForm = () => {
       return { ..._prev, ['message']: event.target.value };
     });
 
-  const handleActivitySelect = (event: React.ChangeEvent<HTMLSelectElement>) =>
-    setContactFormData((_prev) => {
-      return { ..._prev, ['activity']: event.target.value };
-    });
-
   const {
     state: { userLang },
   } = useAppContext();
@@ -63,19 +57,6 @@ const ContactForm = () => {
             type='text'
             placeholder={parseLang('Telefon', 'Phone')}
           />
-          {/* <select onChange={handleActivitySelect} name='aktivnost' id=''>
-            <option value='' defaultValue={'Odaberi aktivnost'} selected disabled>
-              Odaberi aktivnost
-            </option>
-            {webContent.map(
-              (activity) =>
-                activity.NASLOV_AKTIVNOSTI_HERO_HR !== '' && (
-                  <option value={activity.NASLOV_AKTIVNOSTI_HERO_HR} key={activity.NASLOV_AKTIVNOSTI_HERO_HR}>
-                    {activity.NASLOV_AKTIVNOSTI_HERO_HR}
-                  </option>
-                )
-            )}
-          </select> */}
         </div>
         <div className={styles.formBlockRight}>
           <textarea
