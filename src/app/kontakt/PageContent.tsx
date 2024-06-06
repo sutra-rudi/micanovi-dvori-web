@@ -21,6 +21,9 @@ import {
   MdOutlineLocationOn as LocationIcon,
   MdLocalPhone as PhoneIcon,
 } from 'react-icons/md';
+import { parseByLang } from '../utils/parseByLang';
+import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
 
 interface AboutUsPageContent {
   title: string;
@@ -49,6 +52,10 @@ const PageContent = (content: AboutUsPageContent) => {
     scale: [1, 1.7],
   });
 
+  const params = useSearchParams().get('lang');
+
+  const pars = params === 'hr' ? UserLanguage.hr : UserLanguage.en;
+
   return (
     <div>
       <div className={styles.heroWrapp}>
@@ -62,7 +69,7 @@ const PageContent = (content: AboutUsPageContent) => {
           <ContactForm />
           <div className={styles.contactCardCont}>
             <div className={styles.contactInfoCont}>
-              <p>Kontaktirajte nas</p>
+              <p>{parseByLang('Kontaktirajte nas', 'Contact us', pars)}</p>
 
               <div className={styles.contactInfoInnerCont}>
                 <a href='https://www.google.com/maps/dir//Obala+hr.+Čas.+Senada+Ž.+6,+23450,+Obrovac/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x4761c76f06da2a03:0x8abf7d8f6eb1b3c1?sa=X&ved=1t:707&ictx=111'>
