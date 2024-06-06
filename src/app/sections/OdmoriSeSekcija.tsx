@@ -11,6 +11,7 @@ import styles from '../styles/odmoriSe.module.scss';
 import { useParallax } from 'react-scroll-parallax';
 import { useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
+import Link from 'next/link';
 
 const OdmoriSeSekcija = () => {
   const paramsControler = useSearchParams();
@@ -48,8 +49,17 @@ const OdmoriSeSekcija = () => {
             <p>{parseByLang(sectionContentHrEx, sectionContentEnEx)}</p>
           </div>
           <div className={styles.sectionButtonsContainer}>
-            <AppButton isAbout content={parseByLang('Kontaktirajte nas', 'Contact us')} />
-            <AppButton isRelax isAbout content={parseByLang('Google maps', 'Google maps')} />
+            <Link href={`/kontakt/?lang=${checkParams}`}>
+              <AppButton isAbout content={parseByLang('Kontaktirajte nas', 'Contact us')} />
+            </Link>
+
+            <Link
+              href={
+                'https://www.google.com/maps/dir//Camping+Village+Zrmanja/@44.1843724,15.689788,16.95z/data=!4m8!4m7!1m0!1m5!1m1!1s0x4761c7af57c632ed:0xf9e3f2ec2318a20b!2m2!1d15.6945726!2d44.1827998?entry=ttu'
+              }
+            >
+              <AppButton isRelax isAbout content={parseByLang('Google maps', 'Google maps')} />
+            </Link>
           </div>
         </div>
         <div className={styles.imageContainer}>

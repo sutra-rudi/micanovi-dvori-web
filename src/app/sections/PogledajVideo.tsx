@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import React from 'react';
-import pogledajVideo from '../img/sections/pogledaj-video-bg.png';
+import micanoviVideoPoster from '../img/globals/micanovi-placeholder-demo.jpg';
 import styles from '../styles/pogledajVideo.module.scss';
 
 import localFont from 'next/font/local';
@@ -13,7 +13,6 @@ import Lottie from 'lottie-react';
 
 import PaperDividTop from '../components/PaperDividTop';
 import PaperDividBotAlt from '../components/PaperDivitBotAlt';
-import { useAppContext } from '../contexts/store';
 
 const RecoletaBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-Bold.ttf', weight: '700' }],
@@ -52,7 +51,7 @@ const PogledajVideo = () => {
     shouldAlwaysCompleteAnimation: true,
     children: (
       <ReactPlayer
-        url={'/camping-pogledaj-video-teaser.mp4'}
+        url={'/micanovi-placeholder.mp4'}
         loop
         muted
         volume={0}
@@ -65,7 +64,7 @@ const PogledajVideo = () => {
         config={{
           file: {
             attributes: {
-              poster: pogledajVideo.src,
+              poster: micanoviVideoPoster.src,
             },
           },
         }}
@@ -117,11 +116,11 @@ const PogledajVideo = () => {
         render={{
           slide: () => (
             <ReactPlayer
-              url={'https://youtu.be/vDZY18oP-aQ'}
+              url={'https://youtu.be/TytGONY9euA'}
               config={{
                 file: {
                   attributes: {
-                    poster: pogledajVideo.src,
+                    poster: micanoviVideoPoster.src,
                   },
                 },
               }}

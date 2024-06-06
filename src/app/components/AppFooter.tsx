@@ -77,9 +77,9 @@ const AppFooter = (props: FooterInterface) => {
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
                 <span>{parseByLang('O nama', 'About us')}</span>
               </a>
-              <a href={'/kontakt'}>
+              <a href={`/kontakt/?lang=${checkParams}`}>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
-                <span>{parseByLang(`Kontakt forma/?lang=${checkParams}`, `Contact form/?lang=${checkParams}`)}</span>
+                <span>{parseByLang(`Kontakt forma`, `Contact form`)}</span>
               </a>
               <a href={`/#FAQ?lang=${checkParams}`}>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
