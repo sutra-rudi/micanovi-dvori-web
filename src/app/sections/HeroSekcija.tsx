@@ -4,7 +4,7 @@ import React from 'react';
 import styles from '../styles/heroSekcija.module.scss';
 import PaperDividTop from '../components/PaperDividTop';
 import Loading from '../loading';
-import { useAppContext } from '../contexts/store';
+
 import micanoviHeroPoster from '../img/heros/micanovi-dvori-poster.png';
 
 const RecoletaBold = localFont({
@@ -16,16 +16,35 @@ import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
 import ReactPlayer from 'react-player';
 import { useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
-
-// interface MicanoviHero {
-//   content: any;
-// }
+import { getHeroTextQuery } from '../queries/getHeroTextQuery';
 
 const HeroSekcija = () => {
-  // const shorthand = content.data.allMicanoviHeroTekst.edges[0].node.micanoviHeroTekstFields;
-
   const [isReady, setIsReady] = React.useState(false);
   const playerRef = React.useRef<ReactPlayer>(null);
+
+  const [heroData, setHeroData] = React.useState<any>();
+
+  React.useEffect(() => {
+    const clientGetHero = async () => {
+      const queryMic = process.env.NEXT_PUBLIC_MICANOVI_BASE_QUERY;
+
+      const getHeroText = await fetch(`${queryMic}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          query: getHeroTextQuery,
+        }),
+        cache: 'no-store',
+      });
+      const heroText = await getHeroText.json();
+
+      setHeroData(heroText.data.allMicanoviHeroTekst.edges[0].node.micanoviHeroTekstFields);
+    };
+
+    clientGetHero();
+  }, []);
 
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
@@ -75,7 +94,7 @@ const HeroSekcija = () => {
     children: (
       <div className={styles.heroCtaKontejner}>
         <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{parseByLang(headline_hr, headline_en)}</h1>
-        {/* <h2>{parseByLang(shorthand.heroTekstHr, shorthand.heroTekstEn)}</h2> */}
+        {heroData && <h2>{parseByLang(heroData.heroTekstHr, heroData.heroTekstEn)}</h2>}
       </div>
     ),
   };
@@ -90,7 +109,7 @@ const HeroSekcija = () => {
         <h1 className={`${RecoletaBold.className} ${styles.heroCtaHeaderBackside}`}>
           {parseByLang(headline_hr, headline_en)}
         </h1>
-        {/* <h2>{parseByLang(shorthand.heroTekstHr, shorthand.heroTekstEn)}</h2> */}
+        {heroData && <h2>{parseByLang(heroData.heroTekstHr, heroData.heroTekstEn)}</h2>}
       </div>
     ),
   };
