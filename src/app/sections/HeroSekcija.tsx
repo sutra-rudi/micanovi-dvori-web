@@ -23,7 +23,7 @@ interface MicanoviHero {
 
 const HeroSekcija = ({ content }: MicanoviHero) => {
   const shorthand = content.data.allMicanoviHeroTekst.edges[0].node.micanoviHeroTekstFields;
-  console.log('CONTENT', shorthand);
+
   const [isReady, setIsReady] = React.useState(false);
   const playerRef = React.useRef<ReactPlayer>(null);
 
