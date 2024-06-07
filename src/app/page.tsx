@@ -58,21 +58,21 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
         'Dobrodošli u Mićanovi Dvori, mjesto gdje možete uživati u domaćoj hrani i udobnom ambijentu. Pridružite nam se i okusite delicije iz zaboravljenog doba.',
         'Welcome to Mićanovi Dvori, a place where you can enjoy homemade food and a cozy ambiance. Join us and taste delicacies from a forgotten era.'
       ),
-      url: '',
+      url: 'https://micanovidvori.com',
       siteName: 'Mićanovi Dvori',
       locale: parseByLang('hr_HR', 'en_US'),
       type: 'website',
       images: [
         {
           url: micanoviHero.src,
-          width: micanoviHero.width,
-          height: micanoviHero.height,
+          width: 1200,
+          height: 600,
           alt: parseByLang('Uživanje u domaćoj hrani u Mićanovi Dvorima', 'Enjoying homemade food at Mićanovi Dvori'),
         },
         {
           url: micanoviHeroAlt.src,
-          width: micanoviHeroAlt.width,
-          height: micanoviHeroAlt.height,
+          width: 1200,
+          height: 600,
           alt: parseByLang('Uživanje u domaćoj hrani u Mićanovi Dvorima', 'Enjoying homemade food at Mićanovi Dvori'),
         },
       ],
@@ -93,14 +93,14 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
       images: [
         {
           url: micanoviHero.src,
-          width: micanoviHero.width,
-          height: micanoviHero.height,
+          width: 1200,
+          height: 600,
           alt: parseByLang('Uživanje u domaćoj hrani u Mićanovi Dvorima', 'Enjoying homemade food at Mićanovi Dvori'),
         },
         {
           url: micanoviHeroAlt.src,
-          width: micanoviHeroAlt.width,
-          height: micanoviHeroAlt.height,
+          width: 1200,
+          height: 600,
           alt: parseByLang('Uživanje u domaćoj hrani u Mićanovi Dvorima', 'Enjoying homemade food at Mićanovi Dvori'),
         },
       ],

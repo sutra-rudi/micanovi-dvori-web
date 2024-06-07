@@ -42,8 +42,8 @@ const AppHeader = () => {
     },
   ];
   const navLinksTwo = [
-    { text: 'Zrmanja Camping Vilagge', href: '/' },
-    { text: 'Riva Rafting Centar', href: '/' },
+    { text: 'Zrmanja Camping Vilagge', href: 'https://www.zrmanja-camping.hr/' },
+    { text: 'Riva Rafting Centar', href: 'https://riva-rafting-centar.hr' },
     // { text: 'Što posjetiti u okolici?', href: '/obrovacki-kraj' },
   ];
 
