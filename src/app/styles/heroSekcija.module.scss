@@ -94,6 +94,12 @@
       word-wrap: break-word;
       white-space: pre-wrap;
       line-height: 120%;
+
+      @media only screen and (max-width: $desktops) {
+        font-size: $mobileHeading1;
+
+        line-height: $browserProred;
+      }
     }
 
     padding: 0 1rem;
