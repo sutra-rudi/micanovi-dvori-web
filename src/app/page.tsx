@@ -34,7 +34,7 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
       ['tavern', 'homemade food', 'Croatia', 'Zrmanja', 'traditional dishes', 'cozy ambiance', 'gastro adventure']
     ),
     authors: [{ name: 'Mićanovi Dvori' }, { name: 'Studio Sutra', url: 'https://www.sutra.hr/' }],
-    creator: 'Mićanovi Dvori Team',
+    creator: 'Mićanovi Dvori',
     publisher: 'Mićanovi Dvori',
     formatDetection: {
       email: false,
@@ -110,25 +110,25 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
 }
 
 export default async function Home() {
-  const getHeroText = await fetch(`${process.env.MICANOVI_BASE_QUERY}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      query: getHeroTextQuery,
-    }),
-    cache: 'no-store',
-  });
+  // const getHeroText = await fetch(`${process.env.MICANOVI_BASE_QUERY}`, {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body: JSON.stringify({
+  //     query: getHeroTextQuery,
+  //   }),
+  //   cache: 'no-store',
+  // });
 
-  const heroText = await getHeroText.json();
+  // const heroText = await getHeroText.json();
 
   const mapboxApiKey = process.env.MAPBOX_API_KEY;
   return (
     <Suspense fallback={<Loading />}>
       <AppHeader />
       <main className={styles.homeMain}>
-        {heroText && <HeroSekcija content={heroText} />}
+        <HeroSekcija />
         <OdmoriSeSekcija />
         <KampKuciceSekcija />
         <PogledajVideo />

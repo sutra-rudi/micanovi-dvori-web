@@ -17,12 +17,12 @@ import ReactPlayer from 'react-player';
 import { useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
 
-interface MicanoviHero {
-  content: any;
-}
+// interface MicanoviHero {
+//   content: any;
+// }
 
-const HeroSekcija = ({ content }: MicanoviHero) => {
-  const shorthand = content.data.allMicanoviHeroTekst.edges[0].node.micanoviHeroTekstFields;
+const HeroSekcija = () => {
+  // const shorthand = content.data.allMicanoviHeroTekst.edges[0].node.micanoviHeroTekstFields;
 
   const [isReady, setIsReady] = React.useState(false);
   const playerRef = React.useRef<ReactPlayer>(null);
@@ -75,7 +75,7 @@ const HeroSekcija = ({ content }: MicanoviHero) => {
     children: (
       <div className={styles.heroCtaKontejner}>
         <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{parseByLang(headline_hr, headline_en)}</h1>
-        <h2>{parseByLang(shorthand.heroTekstHr, shorthand.heroTekstEn)}</h2>
+        {/* <h2>{parseByLang(shorthand.heroTekstHr, shorthand.heroTekstEn)}</h2> */}
       </div>
     ),
   };
@@ -90,7 +90,7 @@ const HeroSekcija = ({ content }: MicanoviHero) => {
         <h1 className={`${RecoletaBold.className} ${styles.heroCtaHeaderBackside}`}>
           {parseByLang(headline_hr, headline_en)}
         </h1>
-        <h2>{parseByLang(shorthand.heroTekstHr, shorthand.heroTekstEn)}</h2>
+        {/* <h2>{parseByLang(shorthand.heroTekstHr, shorthand.heroTekstEn)}</h2> */}
       </div>
     ),
   };
