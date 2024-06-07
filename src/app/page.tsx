@@ -128,7 +128,7 @@ export default async function Home() {
     <Suspense fallback={<Loading />}>
       <AppHeader />
       <main className={styles.homeMain}>
-        <HeroSekcija content={heroText} />
+        {heroText && <HeroSekcija content={heroText} />}
         <OdmoriSeSekcija />
         <KampKuciceSekcija />
         <PogledajVideo />
