@@ -15,6 +15,7 @@ import MapSection from './sections/MapSection';
 import { UserLanguage } from './types/appState';
 import micanoviHero from '../app/img/micanovi-galerija/micanovi-gallery01.png';
 import micanoviHeroAlt from '../app/img/micanovi-galerija/micanovi-gallery03.png';
+import { getHeroTextQuery } from './queries/getHeroTextQuery';
 
 export async function generateMetadata({ searchParams }: { searchParams: { lang: string } }) {
   const parseByLang = (hrString: string | string[], enString: string | string[]) => {
@@ -109,12 +110,25 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
 }
 
 export default async function Home() {
+  const getHeroText = await fetch(`${process.env.MICANOVI_BASE_QUERY}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query: getHeroTextQuery,
+    }),
+    cache: 'no-store',
+  });
+
+  const heroText = await getHeroText.json();
+
   const mapboxApiKey = process.env.MAPBOX_API_KEY;
   return (
     <Suspense fallback={<Loading />}>
       <AppHeader />
       <main className={styles.homeMain}>
-        <HeroSekcija />
+        <HeroSekcija content={heroText} />
         <OdmoriSeSekcija />
         <KampKuciceSekcija />
         <PogledajVideo />

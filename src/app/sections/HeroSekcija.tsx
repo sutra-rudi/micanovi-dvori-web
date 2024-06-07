@@ -17,7 +17,13 @@ import ReactPlayer from 'react-player';
 import { useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
 
-const HeroSekcija = () => {
+interface MicanoviHero {
+  content: any;
+}
+
+const HeroSekcija = ({ content }: MicanoviHero) => {
+  const shorthand = content.data.allMicanoviHeroTekst.edges[0].node.micanoviHeroTekstFields;
+  console.log('CONTENT', shorthand);
   const [isReady, setIsReady] = React.useState(false);
   const playerRef = React.useRef<ReactPlayer>(null);
 
@@ -69,6 +75,7 @@ const HeroSekcija = () => {
     children: (
       <div className={styles.heroCtaKontejner}>
         <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{parseByLang(headline_hr, headline_en)}</h1>
+        <h2>{parseByLang(shorthand.heroTekstHr, shorthand.heroTekstEn)}</h2>
       </div>
     ),
   };
@@ -83,6 +90,7 @@ const HeroSekcija = () => {
         <h1 className={`${RecoletaBold.className} ${styles.heroCtaHeaderBackside}`}>
           {parseByLang(headline_hr, headline_en)}
         </h1>
+        <h2>{parseByLang(shorthand.heroTekstHr, shorthand.heroTekstEn)}</h2>
       </div>
     ),
   };
