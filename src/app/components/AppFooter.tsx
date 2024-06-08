@@ -59,7 +59,7 @@ const AppFooter = (props: FooterInterface) => {
         </div>
         <div className={styles.contentContainer}>
           <div className={styles.footerBlock}>
-            <p>{parseByLang('Ponuda našeg kampa', 'Offer at our camp')}</p>
+            <p>{parseByLang('Naša ponuda', 'Our offer')}</p>
             <div className={styles.activityStack}>
               <ul>
                 {kampKuciceContent.map((content, index) => (

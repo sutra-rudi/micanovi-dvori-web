@@ -24,13 +24,10 @@
       place-items: center;
       justify-content: center;
       gap: 0.85rem;
-      width: 100%;
     }
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
-    width: 100%;
-    height: max-content;
     gap: 1.25rem;
     position: absolute;
     top: 20%;
@@ -67,14 +64,12 @@
     width: 100%;
     // flex-flow: row wrap;
     place-items: center;
-
-    justify-content: space-between;
+    justify-content: center;
     gap: 8rem;
 
     @media only screen and (max-width: $desktops) {
       gap: 5rem;
       flex-wrap: wrap;
-      justify-content: center;
     }
 
     @media only screen and (max-width: $tablets) {
@@ -85,23 +80,22 @@
       gap: 3rem;
     }
     position: relative;
-    padding: 3.75rem 3rem;
+    padding: 3.75rem 2rem;
   }
 
   .appLogoContainer {
-    max-width: 322px;
+    max-width: 240px;
     width: 100%;
-    height: 138px;
+    height: 108px;
     position: relative;
 
-    // img {
-    //   object-fit: contain;
-    // }
+    img {
+      object-fit: contain;
+    }
 
     @media only screen and (max-width: $tablets) {
       margin: 0 auto;
-      // max-width: 200px;
-      object-fit: contain;
+      max-width: 200px;
     }
   }
 
@@ -110,7 +104,6 @@
     place-items: center;
     justify-content: space-between;
     gap: 3rem;
-    width: 100%;
 
     a {
       transition: all 250ms cubic-bezier(0.5, 0.2, 0.4, 0.25);
@@ -147,14 +140,12 @@
         line-height: $defaultProred;
         font-weight: 500;
         position: relative;
-        color: $plavaGlavna;
         color: $textTamno;
 
         &::after {
           position: absolute;
           content: '';
           width: 48px;
-          background: $zelenaGlavna;
           background: $zelenaTamna;
           height: 2px;
           bottom: -2px;
@@ -189,9 +180,8 @@
           a {
             display: block;
             text-decoration: none;
-            color: $plavaGlavna;
-            font-size: $baseFontSize;
             color: $textTamno;
+            font-size: $baseFontSize;
 
             display: flex;
             place-items: center;
@@ -235,7 +225,6 @@
 
         a {
           text-decoration: none;
-          color: $plavaGlavna;
           color: $textTamno;
           font-size: 1rem;
           line-height: $defaultProred;
@@ -263,7 +252,6 @@
 
         a {
           text-decoration: none;
-          color: $plavaGlavna;
           color: $textTamno;
           font-size: 1rem;
           line-height: $defaultProred;
@@ -290,8 +278,6 @@
     }
 
     .footerDislaimerTrack {
-      background: $zelenaGlavna;
-      background: $tamnaZelenaExtra;
       background: $micanoviZlatna;
       position: absolute;
       bottom: -33px;
@@ -309,12 +295,12 @@
       gap: 1rem;
 
       @media only screen and (max-width: $phones) {
-        bottom: -63px;
+        // bottom: -63px;
         font-size: $mobileFontSizeSmall;
       }
 
       @media only screen and (max-width: 680px) {
-        bottom: -66px;
+        bottom: -56px;
       }
 
       @media only screen and (max-width: $tablets) {
@@ -348,11 +334,17 @@
             width: 100%;
           }
 
-          &:nth-child(2) {
+          &:nth-child(1) {
             @media only screen and (max-width: 768px) {
               background: $zelenaTamna;
             }
           }
+
+          // &:nth-child(2) {
+          //   @media only screen and (max-width: 768px) {
+          //     background: rgba(127, 167, 35, 0.5);
+          //   }
+          // }
 
           a {
             &:hover {
@@ -390,7 +382,6 @@
         img {
           cursor: pointer;
           transition: all 250ms ease;
-
           &:hover {
             transform: scale(1.25);
           }
@@ -421,7 +412,7 @@
     }
 
     .footerBlock:nth-child(3) {
-      padding: 1.5rem 0;
+      padding: 1.5rem 0 2.5rem 0;
 
       a,
       p {
