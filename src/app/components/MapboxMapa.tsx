@@ -22,10 +22,12 @@ const MapboxMapa = (props: AktivnostInterface) => {
       accessToken: props.apiKey,
 
       // center: [lng, lat],
-      // zoom: zoom,
+      zoom: 11,
     });
 
     map.current.scrollZoom.disable();
+    map.current.setCenter({ lat: '44.182943149033214', lng: '15.69450882816688' });
+    map.current.flyTo({ lat: '44.182943149033214', lng: '15.69450882816688' });
   }, [props.apiKey]);
 
   return (
