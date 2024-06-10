@@ -6,6 +6,46 @@
   height: 80vh;
   height: 80lvh;
 
+  .closedInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: url('../img/globals/micanovi-hero-closed.svg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: $desktops) {
+      background: url('../img/globals/micanovi-hero-closed-tablet.svg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    h2 {
+      font-size: 40px;
+      color: #313887;
+      line-height: $defaultProred;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      text-wrap: balance;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      line-height: 120%;
+
+      @media only screen and (max-width: $desktops) {
+        font-size: $mobileHeading1;
+        line-height: $browserProred;
+      }
+    }
+  }
+
   @media only screen and (max-width: $tablets) {
     height: 75vh;
     height: 75lvh;

@@ -94,7 +94,6 @@ const HeroSekcija = () => {
     children: (
       <div className={styles.heroCtaKontejner}>
         <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{parseByLang(headline_hr, headline_en)}</h1>
-        {heroData && <h2>{parseByLang(heroData.heroTekstHr, heroData.heroTekstEn)}</h2>}
       </div>
     ),
   };
@@ -109,7 +108,6 @@ const HeroSekcija = () => {
         <h1 className={`${RecoletaBold.className} ${styles.heroCtaHeaderBackside}`}>
           {parseByLang(headline_hr, headline_en)}
         </h1>
-        {heroData && <h2>{parseByLang(heroData.heroTekstHr, heroData.heroTekstEn)}</h2>}
       </div>
     ),
   };
@@ -118,6 +116,11 @@ const HeroSekcija = () => {
     <section className={styles.heroSekcija}>
       <PaperDividTop />
       <ParallaxBanner className={styles.playerContainer} layers={[background, headline, foreground]} />
+      <div className={styles.closedInfo}>
+        {heroData && (
+          <h2 className={`${RecoletaBold.className}`}>{parseByLang(heroData.heroTekstHr, heroData.heroTekstEn)}</h2>
+        )}
+      </div>
     </section>
   );
 };
