@@ -1,12 +1,12 @@
 'use client';
 import React, { FormEvent } from 'react';
 import styles from '../styles/contact.module.scss';
-import { useAppContext } from '../contexts/store';
 
 import AppButton from './AppButton';
 import { useFormspark } from '@formspark/use-formspark';
 import { useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
+import toast from 'react-hot-toast';
 
 const ContactForm = () => {
   const paramsControler = useSearchParams();
@@ -31,6 +31,13 @@ const ContactForm = () => {
     event.preventDefault();
 
     await submit(contactFormData);
+
+    toast.success(
+      parseByLang(
+        'Hvala na upitu, uskoro ćemo vam se javiti putem e-maila ili telefona! Ukoliko imate hitan upit, slobodno nas kontaktirajte putem telefona ili e-maila.',
+        'Thank you for your inquiry, we will get back to you soon via email or phone! If you have an urgent query, feel free to contact us by phone or email.'
+      )
+    );
   };
 
   const handleInputs = (inputEvent: React.ChangeEvent<HTMLInputElement>, inputName: string) => {
