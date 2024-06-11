@@ -16,8 +16,30 @@ import { useSearchParams } from 'next/navigation';
 
 import { FaFacebookF as FacebookIcon, FaTelegramPlane as TeleIcon, FaInstagram as InstaIcon } from 'react-icons/fa';
 import { UserLanguage } from '../types/appState';
+import { getSocialLinksQuery } from '../queries/getSocialLinksQuery';
 
 const AppHeader = () => {
+  const [footerURLS, setFooterURLS] = React.useState<any>();
+
+  React.useEffect(() => {
+    const prepareFooterLinks = async () => {
+      const getSocialLinks = await fetch(`https://cms.zrmanja-camping.hr/graphql`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ query: getSocialLinksQuery }),
+        cache: 'no-store',
+      });
+
+      const parseSocialLinksData = await getSocialLinks.json();
+      const prepareDataForFooter = parseSocialLinksData.data.povezniceDrustvene.povezniceDrustveneFields;
+      setFooterURLS(prepareDataForFooter);
+      return prepareDataForFooter;
+    };
+
+    prepareFooterLinks();
+  }, []);
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
 
@@ -169,13 +191,19 @@ const AppHeader = () => {
 
             <div className={styles.socialBlock}>
               <div className={styles.socialBlockImage}>
-                <FacebookIcon size={20} color='#2f476f' />
+                <a href={typeof footerURLS !== 'undefined' && footerURLS !== null ? footerURLS.facebook : ''}>
+                  <FacebookIcon size={20} color='#2f476f' />
+                </a>
               </div>
               <div className={styles.socialBlockImage}>
-                <InstaIcon size={20} color='#2f476f' />
+                <a href={typeof footerURLS !== 'undefined' && footerURLS !== null ? footerURLS.instagram : ''}>
+                  <InstaIcon size={20} color='#2f476f' />
+                </a>
               </div>
               <div className={styles.socialBlockImage}>
-                <TeleIcon size={20} color='#2f476f' />
+                <a href='mailto:info@riva-rafting-centar.hr'>
+                  <TeleIcon size={20} color='#2f476f' />
+                </a>
               </div>
             </div>
 
