@@ -56,7 +56,7 @@ const ParallaxVideoSection = () => {
 
     children: (
       <ReactPlayer
-        url={'/video-parallax.mp4'}
+        url={'https://cms.zrmanja-camping.hr/wp-content/uploads/2024/06/video-parallax-1.mp4'}
         loop
         muted
         volume={0}
