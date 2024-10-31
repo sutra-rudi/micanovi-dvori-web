@@ -10,6 +10,7 @@ import { getSocialLinksQuery } from './queries/getSocialLinksQuery';
 import { fetchData } from './utils/callApi';
 import AppHeader from './components/AppHeader';
 import AppFooter from './components/AppFooter';
+import { Suspense } from 'react';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -40,11 +41,13 @@ export default async function RootLayout({
     <html lang='en'>
       <body className={ubuntu.className}>
         <Toaster />
-        <GlobalContextProvider>
-          <AppHeader appSocialLinks={socialShorthand} />
-          <Providers>{children}</Providers>
-          <AppFooter appSocialLinks={socialShorthand} />
-        </GlobalContextProvider>
+        <Suspense>
+          <GlobalContextProvider>
+            <AppHeader appSocialLinks={socialShorthand} />
+            <Providers>{children}</Providers>
+            <AppFooter appSocialLinks={socialShorthand} />
+          </GlobalContextProvider>
+        </Suspense>
       </body>
       <GoogleAnalytics gaId={process.env.MICANOVI_DVORI_GOOGLE_ANALYTICS_CODE!} />
     </html>
