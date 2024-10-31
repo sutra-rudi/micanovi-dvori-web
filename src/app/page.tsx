@@ -112,7 +112,6 @@ export default async function Home() {
   const mapboxApiKey = process.env.MAPBOX_API_KEY;
   return (
     <Suspense fallback={<Loading />}>
-      <AppHeader />
       <main className={styles.homeMain}>
         <HeroSekcija />
         <OdmoriSeSekcija />
@@ -124,7 +123,6 @@ export default async function Home() {
         <DodatneInformacije isLanding />
         <GallerySection />
       </main>
-      <AppFooter />
     </Suspense>
   );
 }

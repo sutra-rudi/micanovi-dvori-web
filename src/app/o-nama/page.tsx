@@ -68,7 +68,6 @@ const companyInfoSegments = [
 export default async function Onama() {
   return (
     <Suspense fallback={<Loading />}>
-      <AppHeader />
       <main className={styles.aboutUsMain}>
         <PageContent
           title='O nama'
@@ -78,8 +77,6 @@ export default async function Onama() {
           textSegments={companyInfoSegments}
         />
       </main>
-
-      <AppFooter isAbout />
     </Suspense>
   );
 }

@@ -50,11 +50,9 @@ export default async function UvjetiKoristenja() {
 
   return (
     <Suspense fallback={<Loading />}>
-      <AppHeader />
       <main className={styles.mainSection}>
         <LazyContent {...sectionContent_hr} />
       </main>
-      <AppFooter />
     </Suspense>
   );
 }

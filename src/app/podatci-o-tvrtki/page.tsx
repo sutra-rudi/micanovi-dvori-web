@@ -68,11 +68,9 @@ const sectionContent_hr = {
 export default async function PodatciOTvrtki() {
   return (
     <Suspense fallback={<Loading />}>
-      <AppHeader />
       <main className={styles.mainSection}>
         <PageContent {...sectionContent_hr} />
       </main>
-      <AppFooter />
     </Suspense>
   );
 }

@@ -49,11 +49,9 @@ export default async function TermsOfUse() {
 
   return (
     <Suspense fallback={<Loading />}>
-      <AppHeader />
       <main className={styles.mainSection}>
         <LazyContent {...sectionContent_hr} />
       </main>
-      <AppFooter />
     </Suspense>
   );
 }

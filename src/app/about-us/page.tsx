@@ -64,7 +64,6 @@ export default async function AboutUs() {
 
   return (
     <Suspense fallback={<Loading />}>
-      <AppHeader />
       <main className={styles.aboutUsMain}>
         <LazyContent
           title='About us'
@@ -74,7 +73,6 @@ export default async function AboutUs() {
           textSegments={companyInfoSegments}
         />
       </main>
-      <AppFooter isAbout />
     </Suspense>
   );
 }

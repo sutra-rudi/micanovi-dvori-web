@@ -6,6 +6,10 @@ import { Providers } from './providers';
 import { Toaster } from 'react-hot-toast';
 const ubuntu = Ubuntu({ weight: ['300', '400', '500', '700'], subsets: ['latin'] });
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { getSocialLinksQuery } from './queries/getSocialLinksQuery';
+import { fetchData } from './utils/callApi';
+import AppHeader from './components/AppHeader';
+import AppFooter from './components/AppFooter';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -24,19 +28,22 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const prepareSocialLinks = await fetchData(getSocialLinksQuery);
+
+  const socialShorthand = prepareSocialLinks.data.povezniceDrustvene.povezniceDrustveneFields;
   return (
     <html lang='en'>
       <body className={ubuntu.className}>
+        <Toaster />
         <GlobalContextProvider>
-          <Providers>
-            <Toaster />
-            {children}
-          </Providers>
+          <AppHeader appSocialLinks={socialShorthand} />
+          <Providers>{children}</Providers>
+          <AppFooter appSocialLinks={socialShorthand} />
         </GlobalContextProvider>
       </body>
       <GoogleAnalytics gaId={process.env.MICANOVI_DVORI_GOOGLE_ANALYTICS_CODE!} />

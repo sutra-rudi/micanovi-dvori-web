@@ -17,34 +17,18 @@ import { useWindowSize } from '../hooks/useWindowSize';
 import { kampKuciceContent } from '../staticContentData/kampKucice';
 import { useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
-import { getSocialLinksQuery } from '../queries/getSocialLinksQuery';
+
 import Link from 'next/link';
+
+import HR_REGION from '../img/globals/hr-zadar-region-riva.png';
+import EN_REGION from '../img/globals/eng-zadar-region-riva.png';
 
 interface FooterInterface {
   isAbout?: boolean;
+  appSocialLinks: Record<string, string>;
 }
 
 const AppFooter = (props: FooterInterface) => {
-  const [footerURLS, setFooterURLS] = React.useState<any>();
-  React.useEffect(() => {
-    const prepareFooterLinks = async () => {
-      const getSocialLinks = await fetch(`https://cms.zrmanja-camping.hr/graphql`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ query: getSocialLinksQuery }),
-        cache: 'no-store',
-      });
-
-      const parseSocialLinksData = await getSocialLinks.json();
-      const prepareDataForFooter = parseSocialLinksData.data.povezniceDrustvene.povezniceDrustveneFields;
-      setFooterURLS(prepareDataForFooter);
-      return prepareDataForFooter;
-    };
-
-    prepareFooterLinks();
-  }, []);
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
 
@@ -59,10 +43,22 @@ const AppFooter = (props: FooterInterface) => {
       <div className={styles.socialFooterStack}>
         <p>{parseByLang('Zapratite nas:', 'Follow us:')}</p>
         <div className={styles.socialIconStack}>
-          <Link href={typeof footerURLS !== 'undefined' && footerURLS.facebook !== null ? footerURLS.facebook : ''}>
+          <Link
+            href={
+              typeof props.appSocialLinks !== 'undefined' && props.appSocialLinks.facebook !== null
+                ? props.appSocialLinks.facebook
+                : ''
+            }
+          >
             <Image src={facebookIcon} alt='icon' width={32} height={32} />
           </Link>
-          <Link href={typeof footerURLS !== 'undefined' && footerURLS.instagram !== null ? footerURLS.instagram : ''}>
+          <Link
+            href={
+              typeof props.appSocialLinks !== 'undefined' && props.appSocialLinks.instagram !== null
+                ? props.appSocialLinks.instagram
+                : ''
+            }
+          >
             <Image src={instaIcon} alt='icon' width={32} height={32} />
           </Link>
           <Link href='mailto:info@riva-rafting-centar.hr'>
@@ -134,6 +130,13 @@ const AppFooter = (props: FooterInterface) => {
               <a href='https://www.google.com/maps?client=safari&rls=en&oe=UTF-8&um=1&ie=UTF-8&fb=1&gl=hr&sa=X&geocode=KTvMTaZvx2FHMbITmAWCma0K&daddr=Kruševo,+Župani+Drage+bb,+23450,+Obrovac'>{`Kruševo, Župani Drage bb,\n23450, Obrovac`}</a>
               <a href='mailto:info@riva-rafting-centar.hr'>info@riva-rafting-centar.hr</a>
               <a href='tel:+38523689920'>023 689 920</a>
+
+              <Image
+                src={checkParams === UserLanguage.hr ? HR_REGION : EN_REGION}
+                alt='stamp of the tourism comunity'
+                width={93}
+                height={41}
+              />
             </div>
           </div>
           <div className={styles.footerDislaimerTrack}>
@@ -166,10 +169,22 @@ const AppFooter = (props: FooterInterface) => {
             <div className={styles.disclaimerSocial}>
               <span>{parseByLang('Zapratite nas:', 'Follow us:')}</span>
               <div className={styles.disclaimerSocialIcons}>
-                <a href={typeof footerURLS !== 'undefined' && footerURLS !== null ? footerURLS.facebook : ''}>
+                <a
+                  href={
+                    typeof props.appSocialLinks !== 'undefined' && props.appSocialLinks !== null
+                      ? props.appSocialLinks.facebook
+                      : ''
+                  }
+                >
                   <Image src={facebookIcon} alt='icon' width={32} height={32} />
                 </a>
-                <a href={typeof footerURLS !== 'undefined' && footerURLS !== null ? footerURLS.instagram : ''}>
+                <a
+                  href={
+                    typeof props.appSocialLinks !== 'undefined' && props.appSocialLinks !== null
+                      ? props.appSocialLinks.instagram
+                      : ''
+                  }
+                >
                   <Image src={instaIcon} alt='icon' width={32} height={32} />
                 </a>
                 <a href='mailto:info@riva-rafting-centar.hr'>
