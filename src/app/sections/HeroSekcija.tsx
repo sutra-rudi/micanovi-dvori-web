@@ -36,7 +36,6 @@ const HeroSekcija = () => {
         body: JSON.stringify({
           query: getHeroTextQuery,
         }),
-        cache: 'no-store',
       });
       const heroText = await getHeroText.json();
 
